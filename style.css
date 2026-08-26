@@ -90,19 +90,24 @@ body{
   white-space:nowrap;
 }
 .brand{
-  position:absolute;
-  top:72px;
+  position:fixed;
+  top:22px;
   left:50%;
   transform:translateX(-50%);
+  z-index:1000;
+
   display:flex;
   align-items:center;
   justify-content:center;
   gap:24px;
+
   width:min(820px,74vw);
+
   color:#fff;
   text-shadow:0 3px 13px rgba(2,52,89,.34);
+
   font-family:"Cinzel",serif;
-  font-size:clamp(3rem,7vw,6.5rem);
+  font-size:clamp(2.5rem,5vw,5rem);
   font-weight:600;
   letter-spacing:.035em;
   line-height:1;
