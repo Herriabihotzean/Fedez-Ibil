@@ -46,7 +46,7 @@ body{
   background:linear-gradient(90deg,rgba(88,186,236,.75) 0%,rgba(103,196,242,.27) 23%,rgba(255,255,255,0) 52%);
 }
 .language-switch{
-  position:absolute;
+  position:fixed;
   top:22px;
   right:30px;
   display:flex;
