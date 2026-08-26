@@ -18,3 +18,5 @@ Dépôt statique prêt pour GitHub Pages.
 
 ## Langues
 Le choix FR/EU est mémorisé dans le navigateur (`localStorage`) et réappliqué au chargement.
+
+- `images/bihotz-sakratua-blanc.svg` : version blanche sur fond transparent utilisée dans le titre.

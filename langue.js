@@ -24,8 +24,22 @@ function applyLanguage(lang) {
     if (translations[selected][key]) el.textContent = translations[selected][key];
   });
 
+  // Même logique que sur Herria Bihotzean :
+  // en français : "Français" / "Basque"
+  // en basque : "Frantsesez" / "Eskuaraz"
+  const labels = selected === "eu"
+    ? { fr: "Frantsesez", eu: "Eskuaraz" }
+    : { fr: "Français", eu: "Basque" };
+
+  document.querySelectorAll(".lang-label").forEach(el => {
+    const target = el.dataset.langLabel;
+    if (labels[target]) el.textContent = labels[target];
+  });
+
   document.querySelectorAll(".lang-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.lang === selected);
+    const isActive = btn.dataset.lang === selected;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
   });
 
   localStorage.setItem("fedez-ibil-lang", selected);

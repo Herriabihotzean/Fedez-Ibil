@@ -50,27 +50,44 @@ body{
   top:22px;
   right:30px;
   display:flex;
-  gap:10px;
+  align-items:flex-start;
+  gap:16px;
   z-index:5;
 }
 .lang-btn{
   display:flex;
+  flex-direction:column;
   align-items:center;
-  gap:7px;
-  border:1px solid rgba(255,255,255,.64);
+  justify-content:center;
+  gap:5px;
+  min-width:78px;
+  padding:7px 8px 6px;
+  border:1px solid transparent;
   border-radius:7px;
-  padding:7px 10px;
-  background:rgba(255,255,255,.76);
-  color:var(--blue-dark);
-  cursor:pointer;
-  font-family:"Cinzel",serif;
-  font-weight:700;
-  box-shadow:0 5px 18px rgba(0,57,96,.12);
-}
-.lang-btn img{width:29px;height:29px}
-.lang-btn.active{
+  background:transparent;
   color:#fff;
-  background:rgba(9,70,122,.88);
+  cursor:pointer;
+  font-family:"Libre Baskerville",Georgia,serif;
+  font-weight:700;
+  text-shadow:0 1px 4px rgba(0,47,78,.5);
+  transition:.15s ease;
+}
+.lang-btn img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+.lang-btn:hover{
+  background:rgba(255,255,255,.10);
+}
+.lang-btn.active{
+  border-color:rgba(255,255,255,.95);
+  background:rgba(255,255,255,.10);
+}
+.lang-label{
+  font-size:.76rem;
+  line-height:1.1;
+  white-space:nowrap;
 }
 .brand{
   position:absolute;
@@ -95,7 +112,7 @@ body{
   width:clamp(74px,9vw,128px);
   height:clamp(74px,9vw,128px);
   object-fit:contain;
-  filter:brightness(0) invert(1) drop-shadow(0 3px 8px rgba(7,61,100,.2));
+  filter:drop-shadow(0 3px 8px rgba(7,61,100,.2));
 }
 .virgin{
   position:absolute;
@@ -226,9 +243,10 @@ footer{
   .brand{top:102px;font-size:2.2rem;gap:7px}
   .brand-heart{width:54px;height:54px}
   .virgin{height:49%;max-width:58vw}
-  .lang-btn span{display:none}
+  .lang-btn span{display:block}
   .lang-btn{padding:5px}
   .main-nav{grid-template-columns:1fr 1fr}
   .nav-link{font-size:.75rem;padding:16px 5px}
   .intro-card p{font-size:1rem;line-height:1.65}
 }
+
