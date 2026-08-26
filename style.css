@@ -114,8 +114,8 @@ body{
   white-space:nowrap;
 }
 .brand-heart{
-  width:clamp(74px,9vw,128px);
-  height:clamp(74px,9vw,128px);
+  width:clamp(95px,11vw,155px);
+  height:clamp(95px,11vw,155px);
   object-fit:contain;
   filter:drop-shadow(0 3px 8px rgba(7,61,100,.2));
 }
