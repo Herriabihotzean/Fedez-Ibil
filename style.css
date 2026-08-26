@@ -51,7 +51,7 @@ body{
   right:30px;
   display:flex;
   align-items:flex-start;
-  gap:16px;
+  gap:8px;
   z-index:5;
 }
 .lang-btn{
@@ -59,13 +59,13 @@ body{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:5px;
-  min-width:78px;
-  padding:7px 8px 6px;
+  gap:3px;
+  min-width:64px;
+  padding:5px 6px 4px;
   border:1px solid transparent;
-  border-radius:7px;
+  border-radius:6px;
   background:transparent;
-  color:#fff;
+    color:#fff;
   cursor:pointer;
   font-family:"Libre Baskerville",Georgia,serif;
   font-weight:700;
@@ -73,8 +73,8 @@ body{
   transition:.15s ease;
 }
 .lang-btn img{
-  width:42px;
-  height:42px;
+  width:34px;              /* auparavant 42px */
+  height:34px;
   object-fit:contain;
 }
 .lang-btn:hover{
@@ -85,9 +85,9 @@ body{
   background:rgba(255,255,255,.10);
 }
 .lang-label{
-  font-size:.76rem;
-  line-height:1.1;
-  white-space:nowrap;
+  font-size:.68rem;        /* inscription légèrement plus petite */
+  line-height:1.15;
+  white-space:nowrap;      /* empêche Français / Frantsesez de se couper */
 }
 .brand{
   position:fixed;
