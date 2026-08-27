@@ -15,7 +15,7 @@ const translations = {
       "Liens",
 
     "home.text":
-      "Fedez Ibil (avancer de par la foi, se conduire selon la foi) vous propose de vivre l’expérience d’un pèlerinage traditionnel dans un esprit de ferveur et d’authentique amitié chrétienne. Prières et Cantiques traditionnels basques et français nous permettront d’exprimer notre Foi en Dieu et notre Espérance du Salut avec le secours de Notre-Dame. Nous voulons ainsi retisser les liens qui de tout temps ont uni Foi et culture traditionnelle locale. Pendant ce pèlerinage, nous recevrons les sacrements de l’Eglise sous leur forme tridentine."
+      "FEDEZ IBIL (avancer de par la foi, se conduire selon la foi) vous propose de vivre l’expérience d’un pèlerinage traditionnel dans un esprit de ferveur et d’authentique amitié chrétienne. Prières et Cantiques traditionnels basques et français nous permettront d’exprimer notre Foi en Dieu et notre Espérance du Salut avec le secours de Notre-Dame. Nous voulons ainsi retisser les liens qui de tout temps ont uni Foi et culture traditionnelle locale. Pendant ce pèlerinage, nous recevrons les sacrements de l’Eglise sous leur forme tridentine."
 
   },
 
@@ -35,7 +35,7 @@ const translations = {
       "Loturak",
 
     "home.text":
-      "Fedez Ibil-ek beila ohiko baten entseatzerat gomitatzen zaituzte, debozionezko giroan eta egiazko adiskidetasun giristinoan. Eskualdun eta frantses othoitz eta kantu tradizionalek Jainkoaren baitako gure Fedea eta Salbamenduaren Esperantza adierazten lagunduko gaituzte, Andredena Mariaren laguntzarekin. Horrela, aspaldidanik Fedea eta tokiko kultura tradizionala elkartu dituzten lokarriak berriz ehundu nahi ditugu. Beila huntan, Elizaren sakramenduak forma tridentinoan errezibituko ditugu."
+      "FEDEZ IBIL-ek beila ohiko baten entseatzerat gomitatzen zaituzte, debozionezko giroan eta egiazko adiskidetasun giristinoan. Eskualdun eta frantses othoitz eta kantu tradizionalek Jainkoaren baitako gure Fedea eta Salbamenduaren Esperantza adierazten lagunduko gaituzte, Andredena Mariaren laguntzarekin. Horrela, aspaldidanik Fedea eta tokiko kultura tradizionala elkartu dituzten lokarriak berriz ehundu nahi ditugu. Beila huntan, Elizaren sakramenduak forma tridentinoan errezibituko ditugu."
 
   }
 
