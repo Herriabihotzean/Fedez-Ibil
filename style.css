@@ -122,7 +122,6 @@ body{
   max-width:35vw;
   object-fit:contain;
   object-position:left bottom;
-  filter:drop-shadow(10px 7px 14px rgba(0,32,55,.30));
   z-index:2;
 }
 .hero-bottom-line{
