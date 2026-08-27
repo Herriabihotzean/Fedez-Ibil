@@ -42,9 +42,7 @@ const translations = {
 };
 
 
-/* =========================================================
-   LANGUE
-   ========================================================= */
+/* LANGUE */
 
 function applyLanguage(lang){
 
@@ -135,20 +133,15 @@ function applyLanguage(lang){
 
 
   requestAnimationFrame(
-    positionSacredHeart
+    sizeSacredHeart
   );
 
 }
 
 
-/* =========================================================
-   SACRÉ-CŒUR
-   ========================================================= */
+/* SACRÉ-CŒUR : largeur D → B */
 
-function positionSacredHeart(){
-
-  const hero =
-    document.querySelector(".hero");
+function sizeSacredHeart(){
 
   const heart =
     document.querySelector(".brand-heart");
@@ -161,7 +154,6 @@ function positionSacredHeart(){
 
 
   if(
-    !hero ||
     !heart ||
     !letterD ||
     !letterB
@@ -177,13 +169,6 @@ function positionSacredHeart(){
     letterB.getBoundingClientRect();
 
 
-  /*
-   * Largeur exacte demandée :
-   *
-   * bord gauche du D de FEDEZ
-   * jusqu'au bord droit du B de IBIL.
-   */
-
   const logoWidth =
     bRect.right - dRect.left;
 
@@ -195,25 +180,10 @@ function positionSacredHeart(){
 
   }
 
-
-  /*
-   * Le centre vertical du Sacré-Cœur
-   * correspond au centre de la photo.
-   */
-
-  const heroHeight =
-    hero.offsetHeight;
-
-
-  heart.style.top =
-    `${heroHeight / 2}px`;
-
 }
 
 
-/* =========================================================
-   INITIALISATION
-   ========================================================= */
+/* INITIALISATION */
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -248,22 +218,20 @@ document.addEventListener(
     );
 
 
-    positionSacredHeart();
+    sizeSacredHeart();
 
   }
 );
 
 
-/* =========================================================
-   POLICE CINZEL
-   ========================================================= */
+/* ATTENDRE CINZEL */
 
 if(document.fonts){
 
   document.fonts.ready.then(
     () => {
 
-      positionSacredHeart();
+      sizeSacredHeart();
 
     }
   );
@@ -271,11 +239,9 @@ if(document.fonts){
 }
 
 
-/* =========================================================
-   REDIMENSIONNEMENT
-   ========================================================= */
+/* RECALCUL SI LA FENÊTRE CHANGE */
 
 window.addEventListener(
   "resize",
-  positionSacredHeart
+  sizeSacredHeart
 );
