@@ -42,9 +42,8 @@ const translations = {
 };
 
 
-
 /* =========================================================
-   CHANGEMENT DE LANGUE
+   LANGUE
    ========================================================= */
 
 function applyLanguage(lang){
@@ -60,10 +59,6 @@ function applyLanguage(lang){
       ? "eu"
       : "fr";
 
-
-  /*
-     Traduction des textes de la page
-  */
 
   document
     .querySelectorAll("[data-i18n]")
@@ -81,16 +76,6 @@ function applyLanguage(lang){
 
     });
 
-
-  /*
-     Libellés des boutons de langue
-
-     Français :
-     Français / Basque
-
-     Basque :
-     Frantsesez / Eskuaraz
-  */
 
   const labels =
     selected === "eu"
@@ -121,25 +106,17 @@ function applyLanguage(lang){
     });
 
 
-  /*
-     Cadre uniquement autour
-     de la langue sélectionnée
-  */
-
   document
     .querySelectorAll(".lang-btn")
     .forEach(button => {
 
       const isActive =
-        button.dataset.lang
-        === selected;
-
+        button.dataset.lang === selected;
 
       button.classList.toggle(
         "active",
         isActive
       );
-
 
       button.setAttribute(
         "aria-pressed",
@@ -151,21 +128,11 @@ function applyLanguage(lang){
     });
 
 
-  /*
-     Mémorisation de la langue
-  */
-
   localStorage.setItem(
     "fedez-ibil-lang",
     selected
   );
 
-
-  /*
-     La police pouvant légèrement changer
-     les dimensions du titre,
-     on recalcule le logo.
-  */
 
   requestAnimationFrame(
     positionSacredHeart
@@ -174,9 +141,8 @@ function applyLanguage(lang){
 }
 
 
-
 /* =========================================================
-   POSITION ET LARGEUR DU SACRÉ-CŒUR
+   SACRÉ-CŒUR
    ========================================================= */
 
 function positionSacredHeart(){
@@ -204,11 +170,6 @@ function positionSacredHeart(){
   }
 
 
-  /*
-     Position réelle du D de FEDEZ
-     et du B de IBIL
-  */
-
   const dRect =
     letterD.getBoundingClientRect();
 
@@ -217,17 +178,14 @@ function positionSacredHeart(){
 
 
   /*
-     On prend la PLUS GRANDE distance :
-
-     bord gauche du D
-     jusqu'au
-     bord droit du B.
-  */
+   * Largeur exacte demandée :
+   *
+   * bord gauche du D de FEDEZ
+   * jusqu'au bord droit du B de IBIL.
+   */
 
   const logoWidth =
-    bRect.right
-    -
-    dRect.left;
+    bRect.right - dRect.left;
 
 
   if(logoWidth > 0){
@@ -239,16 +197,9 @@ function positionSacredHeart(){
 
 
   /*
-     Centre vertical de la photographie.
-
-     Le logo est en position:fixed :
-     il restera donc à cet endroit
-     lorsqu'on descend la page.
-
-     Comme la photo commence en haut
-     de l'écran, son centre correspond
-     à la moitié de la hauteur du hero.
-  */
+   * Le centre vertical du Sacré-Cœur
+   * correspond au centre de la photo.
+   */
 
   const heroHeight =
     hero.offsetHeight;
@@ -260,7 +211,6 @@ function positionSacredHeart(){
 }
 
 
-
 /* =========================================================
    INITIALISATION
    ========================================================= */
@@ -268,10 +218,6 @@ function positionSacredHeart(){
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-
-    /*
-       Clic sur les langues
-    */
 
     document
       .querySelectorAll(".lang-btn")
@@ -291,15 +237,10 @@ document.addEventListener(
       });
 
 
-    /*
-       Langue mémorisée
-    */
-
     const savedLanguage =
       localStorage.getItem(
         "fedez-ibil-lang"
-      )
-      || "fr";
+      ) || "fr";
 
 
     applyLanguage(
@@ -307,28 +248,15 @@ document.addEventListener(
     );
 
 
-    /*
-       Premier positionnement
-       du Sacré-Cœur
-    */
-
     positionSacredHeart();
 
   }
 );
 
 
-
 /* =========================================================
-   ATTENDRE LE CHARGEMENT DE LA POLICE CINZEL
+   POLICE CINZEL
    ========================================================= */
-
-/*
-   C'est important :
-   la largeur du D et du B n'est
-   parfaitement exacte qu'une fois
-   Cinzel réellement chargée.
-*/
 
 if(document.fonts){
 
@@ -343,9 +271,8 @@ if(document.fonts){
 }
 
 
-
 /* =========================================================
-   RECALCUL EN CAS DE REDIMENSIONNEMENT
+   REDIMENSIONNEMENT
    ========================================================= */
 
 window.addEventListener(
