@@ -85,25 +85,27 @@ body{
   z-index:1000;
 
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:24px;
-
-  width:min(820px,74vw);
+  gap:10px;
 
   color:#fff;
   text-shadow:0 3px 13px rgba(2,52,89,.34);
 
   font-family:"Cinzel",serif;
-  font-size:clamp(2.5rem,5vw,5rem);
   font-weight:600;
   letter-spacing:.035em;
   line-height:1;
   white-space:nowrap;
 }
+
+.brand-title{
+  font-size:clamp(2.5rem,5vw,5rem);
+}
 .brand-heart{
-  width:clamp(95px,11vw,155px);
-  height:clamp(95px,11vw,155px);
+  width:clamp(190px,22vw,310px);
+  height:clamp(190px,22vw,310px);
   object-fit:contain;
   filter:drop-shadow(0 3px 8px rgba(7,61,100,.2));
 }
