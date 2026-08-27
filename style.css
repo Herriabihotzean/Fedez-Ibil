@@ -31,13 +31,7 @@ body{
   object-position:center 56%;
   z-index:-3;
 }
-.hero-filter{
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background:
-    linear-gradient(180deg,rgba(67,171,230,.72) 0%,rgba(77,177,230,.48) 33%,rgba(20,75,112,.14) 67%,rgba(8,38,59,.30) 100%);
-}
+
 .hero::after{
   content:"";
   position:absolute;
