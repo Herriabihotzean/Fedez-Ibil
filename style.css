@@ -255,3 +255,37 @@ footer{
   .intro-card p{font-size:1rem;line-height:1.65}
 }
 
+@media(max-width:520px){
+
+  .language-switch{
+    top:10px;
+    right:10px;
+    gap:8px;
+  }
+
+  .lang-btn{
+    min-width:54px;
+    padding:3px 5px;
+    gap:3px;
+    border-radius:7px;
+  }
+
+  .lang-btn img{
+    width:26px;
+    height:26px;
+    margin:0 auto 3px;
+  }
+
+  .lang-label{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:.72rem;
+    font-weight:400;
+    line-height:1.2;
+    white-space:nowrap;
+  }
+
+  .lang-btn.active .lang-label{
+    font-weight:700;
+  }
+}
+
