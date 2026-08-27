@@ -24,11 +24,26 @@ body{
 }
 
 
-/* HERO */
+/* =========================================================
+   GRANDE PHOTO
+   ========================================================= */
 
 .hero{
   position:relative;
-  min-height:650px;
+
+  /*
+     Hauteur fluide :
+     pas de saut brutal entre ordinateur,
+     tablette et téléphone.
+  */
+  height:clamp(
+    560px,
+    calc(516px + 8.9vw),
+    650px
+  );
+
+  min-height:0;
+
   overflow:hidden;
   background:var(--blue);
   isolation:isolate;
@@ -47,12 +62,17 @@ body{
   z-index:-3;
 }
 
+
+/* Pas de halo bleu à gauche */
+
 .hero::after{
   display:none;
 }
 
 
-/* LANGUES : restent fixes */
+/* =========================================================
+   LANGUES
+   ========================================================= */
 
 .language-switch{
   position:fixed;
@@ -120,14 +140,25 @@ body{
 }
 
 
-/* TITRE : attaché à la photo */
+/* =========================================================
+   FEDEZ IBIL
+   ========================================================= */
 
 .brand{
   position:absolute;
 
-  top:22px;
-  left:50%;
+  /*
+     Position verticale fluide.
+     Le titre est plus bas sur les petits écrans
+     afin de laisser les boutons de langue respirer.
+  */
+  top:clamp(
+    28px,
+    calc(120px - 6.1vw),
+    90px
+  );
 
+  left:50%;
   transform:translateX(-50%);
 
   z-index:1000;
@@ -146,21 +177,59 @@ body{
   white-space:nowrap;
 }
 
+
+/*
+   Les deux mots sont séparés volontairement
+   pour pouvoir régler précisément leur écart.
+*/
+
 .brand-title{
-  font-size:clamp(2.5rem,5vw,5rem);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  /*
+     C'est cette valeur qui règle
+     l'espace entre FEDEZ et IBIL.
+  */
+  gap:.32em;
+
+  /*
+     Taille fluide.
+  */
+  font-size:clamp(
+    50px,
+    calc(35.5px + 2.97vw),
+    80px
+  );
+}
+
+.brand-word{
+  display:inline-block;
 }
 
 
-/* SACRÉ-CŒUR : attaché à la photo */
+/* =========================================================
+   SACRÉ-CŒUR
+   ========================================================= */
 
 .brand-heart{
   position:absolute;
 
+  /*
+     Toujours au centre exact
+     de la grande photographie.
+  */
   left:50%;
   top:50%;
 
   transform:translate(-50%,-50%);
 
+  /*
+     Valeur provisoire.
+     langue.js la remplace par la largeur
+     exacte entre le D et le B.
+  */
   width:200px;
   height:auto;
 
@@ -174,7 +243,9 @@ body{
 }
 
 
-/* VIERGE */
+/* =========================================================
+   VIERGE
+   ========================================================= */
 
 .virgin{
   position:absolute;
@@ -182,16 +253,23 @@ body{
   left:0;
   bottom:-7px;
 
-  height:min(76%,600px);
+  /*
+     Taille fluide, sans changement brutal.
+  */
+  height:clamp(
+    49%,
+    calc(35.9% + 2.67vw),
+    76%
+  );
 
   width:auto;
-  max-width:35vw;
 
   object-fit:contain;
   object-position:left bottom;
 
   z-index:2;
 }
+
 
 .hero-bottom-line{
   position:absolute;
@@ -206,7 +284,9 @@ body{
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .main-nav{
   position:relative;
@@ -222,8 +302,7 @@ body{
 
   margin:-1px auto 0;
 
-  background:
-    rgba(232,247,255,.96);
+  background:rgba(232,247,255,.96);
 
   border-bottom:
     1px solid rgba(11,77,134,.22);
@@ -279,7 +358,9 @@ body{
 }
 
 
-/* CONTENU */
+/* =========================================================
+   CONTENU
+   ========================================================= */
 
 .home-main{
   padding:30px 20px 56px;
@@ -310,7 +391,9 @@ body{
 }
 
 
-/* ORNEMENTS */
+/* =========================================================
+   ORNEMENTS
+   ========================================================= */
 
 .ornament{
   margin:0 auto 15px;
@@ -345,7 +428,9 @@ body{
 }
 
 
-/* FOOTER */
+/* =========================================================
+   PIED DE PAGE
+   ========================================================= */
 
 footer{
   padding:18px;
@@ -362,7 +447,9 @@ footer{
 }
 
 
-/* PAGES PROVISOIRES */
+/* =========================================================
+   PAGES PROVISOIRES
+   ========================================================= */
 
 .placeholder{
   max-width:900px;
@@ -376,7 +463,6 @@ footer{
 
 .placeholder h1{
   color:var(--blue-deep);
-
   font-family:"Cinzel",serif;
 }
 
@@ -385,30 +471,15 @@ footer{
 }
 
 
-/* TABLETTE */
+/* =========================================================
+   TABLETTE
+   ========================================================= */
 
 @media(max-width:800px){
-
-  .hero{
-    min-height:560px;
-  }
-
-  .brand{
-    top:70px;
-  }
-
-  .brand-title{
-    font-size:clamp(2.4rem,10vw,4rem);
-  }
 
   .language-switch{
     top:16px;
     right:16px;
-  }
-
-  .virgin{
-    height:56%;
-    max-width:52vw;
   }
 
   .hero-photo{
@@ -430,26 +501,11 @@ footer{
 }
 
 
-/* PETIT TÉLÉPHONE */
+/* =========================================================
+   PETIT TÉLÉPHONE
+   ========================================================= */
 
 @media(max-width:470px){
-
-  .hero{
-    min-height:500px;
-  }
-
-  .brand{
-    top:65px;
-  }
-
-  .brand-title{
-    font-size:2.2rem;
-  }
-
-  .virgin{
-    height:49%;
-    max-width:58vw;
-  }
 
   .main-nav{
     grid-template-columns:
@@ -468,7 +524,9 @@ footer{
 }
 
 
-/* LANGUES SUR TÉLÉPHONE */
+/* =========================================================
+   LANGUES SUR TÉLÉPHONE
+   ========================================================= */
 
 @media(max-width:520px){
 
