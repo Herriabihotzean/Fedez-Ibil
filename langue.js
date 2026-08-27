@@ -42,9 +42,7 @@ const translations = {
 };
 
 
-/* =========================================================
-   LANGUE
-   ========================================================= */
+/* LANGUE */
 
 function applyLanguage(lang){
 
@@ -67,13 +65,24 @@ function applyLanguage(lang){
       const key =
         element.dataset.i18n;
 
-      if(translations[selected][key]){
+
+      if(
+        translations[selected][key]
+      ){
+
         element.textContent =
           translations[selected][key];
+
       }
 
     });
 
+
+
+  /*
+     Libellés volontairement
+     en minuscules.
+  */
 
   const labels =
     selected === "eu"
@@ -96,12 +105,16 @@ function applyLanguage(lang){
       const target =
         element.dataset.langLabel;
 
+
       if(labels[target]){
+
         element.textContent =
           labels[target];
+
       }
 
     });
+
 
 
   document
@@ -109,12 +122,15 @@ function applyLanguage(lang){
     .forEach(button => {
 
       const isActive =
-        button.dataset.lang === selected;
+        button.dataset.lang
+        === selected;
+
 
       button.classList.toggle(
         "active",
         isActive
       );
+
 
       button.setAttribute(
         "aria-pressed",
@@ -124,6 +140,7 @@ function applyLanguage(lang){
       );
 
     });
+
 
 
   localStorage.setItem(
@@ -139,20 +156,27 @@ function applyLanguage(lang){
 }
 
 
-/* =========================================================
-   LARGEUR DU SACRÉ-CŒUR
-   ========================================================= */
+
+/* LARGEUR DU SACRÉ-CŒUR */
 
 function sizeSacredHeart(){
 
   const heart =
-    document.querySelector(".brand-heart");
+    document.querySelector(
+      ".brand-heart"
+    );
+
 
   const letterD =
-    document.getElementById("logo-start");
+    document.getElementById(
+      "logo-start"
+    );
+
 
   const letterB =
-    document.getElementById("logo-end");
+    document.getElementById(
+      "logo-end"
+    );
 
 
   if(
@@ -160,31 +184,59 @@ function sizeSacredHeart(){
     !letterD ||
     !letterB
   ){
+
     return;
+
   }
 
 
   const dRect =
-    letterD.getBoundingClientRect();
+    letterD
+      .getBoundingClientRect();
+
 
   const bRect =
-    letterB.getBoundingClientRect();
+    letterB
+      .getBoundingClientRect();
 
 
   /*
-     Largeur exacte :
+     Largeur normale :
      bord gauche du D de FEDEZ
      jusqu'au bord droit du B de IBIL.
-
-     L'espace ajouté entre FEDEZ et IBIL
-     est donc automatiquement pris en compte.
   */
 
-  const logoWidth =
-    bRect.right - dRect.left;
+  let logoWidth =
+    bRect.right
+    -
+    dRect.left;
 
 
-  if(logoWidth > 0){
+  /*
+     Écran très étroit :
+     réduction légère du logo
+     pour éviter qu'il masque
+     la main de l'Enfant Jésus.
+
+     86 % donne une réduction
+     sensible mais pas excessive.
+
+     height:auto conserve
+     exactement les proportions.
+  */
+
+  if(
+    window.innerWidth <= 380
+  ){
+
+    logoWidth *= 0.86;
+
+  }
+
+
+  if(
+    logoWidth > 0
+  ){
 
     heart.style.width =
       `${logoWidth}px`;
@@ -194,16 +246,18 @@ function sizeSacredHeart(){
 }
 
 
-/* =========================================================
-   INITIALISATION
-   ========================================================= */
+
+/* INITIALISATION */
 
 document.addEventListener(
   "DOMContentLoaded",
   () => {
 
+
     document
-      .querySelectorAll(".lang-btn")
+      .querySelectorAll(
+        ".lang-btn"
+      )
       .forEach(button => {
 
         button.addEventListener(
@@ -223,7 +277,8 @@ document.addEventListener(
     const savedLanguage =
       localStorage.getItem(
         "fedez-ibil-lang"
-      ) || "fr";
+      )
+      || "fr";
 
 
     applyLanguage(
@@ -237,11 +292,12 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   ATTENDRE LE CHARGEMENT DE CINZEL
-   ========================================================= */
 
-if(document.fonts){
+/* ATTENDRE LA POLICE CINZEL */
+
+if(
+  document.fonts
+){
 
   document.fonts.ready.then(
     () => {
@@ -254,9 +310,8 @@ if(document.fonts){
 }
 
 
-/* =========================================================
-   REDIMENSIONNEMENT
-   ========================================================= */
+
+/* REDIMENSIONNEMENT */
 
 window.addEventListener(
   "resize",
