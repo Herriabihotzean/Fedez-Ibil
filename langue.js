@@ -35,14 +35,16 @@ const translations = {
       "Loturak",
 
     "home.text":
-      "Fedez Ibil-ek beila ohiko baten esperientzia bizitzera gomitatzen zaituzte, debozionezko giroan eta egiazko adiskidetasun giristinoan. Eskualdun eta frantses othoitz eta kantu tradizionalek Jainkoaren baitako gure Fedea eta Salbamenduaren Esperantza adierazten lagunduko gaituzte, Andredena Mariaren laguntzarekin. Horrela, aspaldidanik Fedea eta tokiko kultura tradizionala elkartu dituzten lokarriak berriz ehundu nahi ditugu. Beila huntan, Elizaren sakramenduak forma tridentinoan errezibituko ditugu."
+      "Fedez Ibil-ek beila ohiko baten entseatzerat gomitatzen zaituzte, debozionezko giroan eta egiazko adiskidetasun giristinoan. Eskualdun eta frantses othoitz eta kantu tradizionalek Jainkoaren baitako gure Fedea eta Salbamenduaren Esperantza adierazten lagunduko gaituzte, Andredena Mariaren laguntzarekin. Horrela, aspaldidanik Fedea eta tokiko kultura tradizionala elkartu dituzten lokarriak berriz ehundu nahi ditugu. Beila huntan, Elizaren sakramenduak forma tridentinoan errezibituko ditugu."
 
   }
 
 };
 
 
-/* LANGUE */
+/* =========================================================
+   LANGUE
+   ========================================================= */
 
 function applyLanguage(lang){
 
@@ -65,9 +67,7 @@ function applyLanguage(lang){
       const key =
         element.dataset.i18n;
 
-      if(
-        translations[selected][key]
-      ){
+      if(translations[selected][key]){
         element.textContent =
           translations[selected][key];
       }
@@ -139,7 +139,9 @@ function applyLanguage(lang){
 }
 
 
-/* SACRÉ-CŒUR : largeur D → B */
+/* =========================================================
+   LARGEUR DU SACRÉ-CŒUR
+   ========================================================= */
 
 function sizeSacredHeart(){
 
@@ -169,6 +171,15 @@ function sizeSacredHeart(){
     letterB.getBoundingClientRect();
 
 
+  /*
+     Largeur exacte :
+     bord gauche du D de FEDEZ
+     jusqu'au bord droit du B de IBIL.
+
+     L'espace ajouté entre FEDEZ et IBIL
+     est donc automatiquement pris en compte.
+  */
+
   const logoWidth =
     bRect.right - dRect.left;
 
@@ -183,7 +194,9 @@ function sizeSacredHeart(){
 }
 
 
-/* INITIALISATION */
+/* =========================================================
+   INITIALISATION
+   ========================================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -224,7 +237,9 @@ document.addEventListener(
 );
 
 
-/* ATTENDRE CINZEL */
+/* =========================================================
+   ATTENDRE LE CHARGEMENT DE CINZEL
+   ========================================================= */
 
 if(document.fonts){
 
@@ -239,7 +254,9 @@ if(document.fonts){
 }
 
 
-/* RECALCUL SI LA FENÊTRE CHANGE */
+/* =========================================================
+   REDIMENSIONNEMENT
+   ========================================================= */
 
 window.addEventListener(
   "resize",
