@@ -229,7 +229,7 @@ function sizeSacredHeart(){
     window.innerWidth <= 380
   ){
 
-    logoWidth *= 0.86;
+    logoWidth *= 0.75;
 
   }
 
