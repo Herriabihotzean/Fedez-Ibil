@@ -79,13 +79,13 @@ function applyLanguage(lang){
     selected === "eu"
 
       ? {
-          fr:"Frantsesez",
-          eu:"Eskuaraz"
+          fr:"frantsesez",
+          eu:"eskuaraz"
         }
 
       : {
-          fr:"Français",
-          eu:"Basque"
+          fr:"français",
+          eu:"basque"
         };
 
 
