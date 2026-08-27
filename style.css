@@ -217,14 +217,21 @@ footer{
 }
 .placeholder a{color:var(--blue-deep)}
 @media(max-width:800px){
-  .hero{min-height:560px}
+
   .brand{
-    top:100px;
+    top:70px;
     width:94vw;
-    gap:12px;
+    gap:8px;
+  }
+
+  .brand-title{
     font-size:clamp(2.4rem,10vw,4rem);
   }
-  .brand-heart{width:74px;height:74px}
+
+  .brand-heart{
+    width:148px;
+    height:148px;
+  }
   .language-switch{top:16px;right:16px}
   .virgin{height:56%;max-width:52vw}
   .hero-photo{object-position:63% center}
@@ -234,8 +241,19 @@ footer{
 }
 @media(max-width:470px){
   .hero{min-height:500px}
-  .brand{top:102px;font-size:2.2rem;gap:7px}
-  .brand-heart{width:54px;height:54px}
+.brand{
+  top:65px;
+  gap:6px;
+}
+
+.brand-title{
+  font-size:2.2rem;
+}
+
+.brand-heart{
+  width:108px;
+  height:108px;
+}
   .virgin{height:49%;max-width:58vw}
   .lang-btn span{display:block}
   .lang-btn{padding:5px}
