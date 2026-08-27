@@ -32,13 +32,7 @@ body{
   z-index:-3;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:linear-gradient(90deg,rgba(88,186,236,.75) 0%,rgba(103,196,242,.27) 23%,rgba(255,255,255,0) 52%);
-}
+
 .language-switch{
   position:fixed;
   top:22px;
