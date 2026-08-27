@@ -7,14 +7,32 @@
   --ink:#17364c;
   --line:rgba(255,255,255,.58);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   color:var(--ink);
   background:linear-gradient(#dff3ff,#f7fcff);
   font-family:"Libre Baskerville",Georgia,serif;
 }
+
+
+/* =========================================================
+   GRANDE PHOTO
+   ========================================================= */
+
 .hero{
   position:relative;
   min-height:650px;
@@ -22,277 +40,588 @@ body{
   background:var(--blue);
   isolation:isolate;
 }
+
 .hero-photo{
   position:absolute;
   inset:0;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
   object-position:center 56%;
+
   z-index:-3;
 }
 
 
+/*
+   Pas de dégradé bleu à gauche.
+   On le désactive volontairement.
+*/
+
+.hero::after{
+  display:none;
+}
+
+
+/* =========================================================
+   LANGUES
+   ========================================================= */
+
 .language-switch{
   position:fixed;
+
   top:22px;
   right:30px;
+
   display:flex;
   align-items:flex-start;
+
   gap:8px;
-  z-index:5;
+
+  z-index:1100;
 }
+
+
 .lang-btn{
   display:flex;
   flex-direction:column;
+
   align-items:center;
   justify-content:center;
+
   gap:3px;
+
   min-width:64px;
+
   padding:5px 6px 4px;
+
   border:1px solid transparent;
   border-radius:6px;
+
   background:transparent;
-    color:#fff;
+
+  color:#fff;
+
   cursor:pointer;
+
   font-family:"Libre Baskerville",Georgia,serif;
   font-weight:700;
+
   text-shadow:0 1px 4px rgba(0,47,78,.5);
+
   transition:.15s ease;
 }
+
+
 .lang-btn img{
-  width:34px;              /* auparavant 42px */
+  width:34px;
   height:34px;
+
   object-fit:contain;
 }
+
+
 .lang-btn:hover{
   background:rgba(255,255,255,.10);
 }
+
+
+/*
+   Le cadre n'apparaît que
+   sur la langue sélectionnée.
+*/
+
 .lang-btn.active{
   border-color:rgba(255,255,255,.95);
   background:rgba(255,255,255,.10);
 }
+
+
 .lang-label{
-  font-size:.68rem;        /* inscription légèrement plus petite */
+  font-size:.68rem;
   line-height:1.15;
-  white-space:nowrap;      /* empêche Français / Frantsesez de se couper */
-}
-.brand{
-  position:fixed;
-  top:22px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:1000;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  color:#fff;
-  text-shadow:0 3px 13px rgba(2,52,89,.34);
-
-  font-family:"Cinzel",serif;
-  font-weight:600;
-  letter-spacing:.035em;
-  line-height:1;
   white-space:nowrap;
 }
+
+
+/* =========================================================
+   TITRE FEDEZ IBIL
+   ========================================================= */
+
+.brand{
+  position:fixed;
+
+  top:22px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  z-index:1000;
+
+  color:#fff;
+
+  text-shadow:
+    0 3px 13px rgba(2,52,89,.34);
+
+  font-family:"Cinzel",serif;
+
+  font-weight:600;
+
+  letter-spacing:.035em;
+
+  line-height:1;
+
+  white-space:nowrap;
+}
+
 
 .brand-title{
   font-size:clamp(2.5rem,5vw,5rem);
 }
+
+
+/* =========================================================
+   SACRÉ-CŒUR
+   ========================================================= */
+
+/*
+   Sa largeur est calculée automatiquement
+   par langue.js.
+
+   La valeur de width ici n'est qu'une
+   valeur de secours avant l'exécution
+   du JavaScript.
+*/
+
 .brand-heart{
-  width:clamp(190px,22vw,310px);
-  height:clamp(190px,22vw,310px);
+  position:fixed;
+
+  left:50%;
+  top:325px;
+
+  transform:translate(-50%,-50%);
+
+  width:200px;
+  height:auto;
+
+  max-height:440px;
+
   object-fit:contain;
-  filter:drop-shadow(0 3px 8px rgba(7,61,100,.2));
+
+  z-index:999;
+
+  filter:
+    drop-shadow(
+      0 3px 8px rgba(7,61,100,.20)
+    );
 }
+
+
+/* =========================================================
+   VIERGE À L'ENFANT
+   ========================================================= */
+
 .virgin{
   position:absolute;
+
   left:0;
   bottom:-7px;
+
   height:min(76%,600px);
+
   width:auto;
   max-width:35vw;
+
   object-fit:contain;
   object-position:left bottom;
+
   z-index:2;
 }
+
+
 .hero-bottom-line{
   position:absolute;
+
   bottom:0;
   left:0;
   right:0;
+
   height:2px;
-  background:rgba(255,255,255,.64);
+
+  background:
+    rgba(255,255,255,.64);
 }
+
+
+/* =========================================================
+   NAVIGATION PRINCIPALE
+   ========================================================= */
+
 .main-nav{
   position:relative;
+
   z-index:4;
+
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
   max-width:980px;
+
   margin:-1px auto 0;
-  background:rgba(232,247,255,.96);
-  border-bottom:1px solid rgba(11,77,134,.22);
-  box-shadow:0 8px 25px rgba(26,84,121,.10);
+
+  background:
+    rgba(232,247,255,.96);
+
+  border-bottom:
+    1px solid rgba(11,77,134,.22);
+
+  box-shadow:
+    0 8px 25px rgba(26,84,121,.10);
 }
+
+
 .nav-link{
   position:relative;
-  padding:20px 12px 18px;
+
+  padding:
+    20px 12px 18px;
+
   text-align:center;
+
   text-decoration:none;
   text-transform:uppercase;
+
   color:var(--blue-deep);
+
   font-family:"Cinzel",serif;
+
   font-size:.94rem;
   font-weight:700;
+
   letter-spacing:.03em;
-  border-right:1px solid rgba(11,77,134,.2);
+
+  border-right:
+    1px solid rgba(11,77,134,.2);
 }
-.nav-link:last-child{border-right:0}
-.nav-link:hover,.nav-link.active{background:#fff}
+
+
+.nav-link:last-child{
+  border-right:0;
+}
+
+
+.nav-link:hover,
+.nav-link.active{
+  background:#fff;
+}
+
+
 .nav-link.active::after{
   content:"";
+
   position:absolute;
+
   bottom:0;
   left:25%;
   right:25%;
+
   height:3px;
+
   background:var(--blue-deep);
 }
+
+
+/* =========================================================
+   TEXTE D'ACCUEIL
+   ========================================================= */
+
 .home-main{
-  padding:30px 20px 56px;
+  padding:
+    30px 20px 56px;
 }
+
+
 .intro-card{
   position:relative;
+
   max-width:980px;
+
   margin:0 auto;
-  padding:28px 60px 36px;
+
+  padding:
+    28px 60px 36px;
+
   text-align:center;
-  background:rgba(255,255,255,.28);
+
+  background:
+    rgba(255,255,255,.28);
 }
+
+
 .intro-card p{
   margin:0;
+
   color:#0e4f86;
-  font-size:clamp(1.05rem,1.55vw,1.38rem);
+
+  font-size:
+    clamp(1.05rem,1.55vw,1.38rem);
+
   line-height:1.8;
 }
+
+
+/* =========================================================
+   ORNEMENTS
+   ========================================================= */
+
 .ornament{
-  margin:0 auto 15px;
+  margin:
+    0 auto 15px;
+
   color:#76bce5;
+
   font-size:1.45rem;
+
   letter-spacing:.45em;
 }
-.ornament::before,.ornament::after{
+
+
+.ornament::before,
+.ornament::after{
   content:"";
+
   display:inline-block;
+
   vertical-align:middle;
+
   width:90px;
   max-width:16vw;
+
   height:1px;
+
   margin:0 12px;
+
   background:#8bc8e9;
 }
-.ornament-bottom{margin:17px auto 0}
+
+
+.ornament-bottom{
+  margin:
+    17px auto 0;
+}
+
+
+/* =========================================================
+   PIED DE PAGE
+   ========================================================= */
+
 footer{
   padding:18px;
+
   text-align:center;
+
   color:#5a91b2;
+
   font-family:"Cinzel",serif;
+
   font-size:.8rem;
+
   letter-spacing:.18em;
 }
+
+
+/* =========================================================
+   PAGES PROVISOIRES
+   ========================================================= */
+
 .placeholder{
   max-width:900px;
+
   margin:60px auto;
-  padding:30px 24px;
+
+  padding:
+    30px 24px;
+
   text-align:center;
 }
+
+
 .placeholder h1{
   color:var(--blue-deep);
+
   font-family:"Cinzel",serif;
 }
-.placeholder a{color:var(--blue-deep)}
+
+
+.placeholder a{
+  color:var(--blue-deep);
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
 @media(max-width:800px){
+
+  .hero{
+    min-height:560px;
+  }
+
 
   .brand{
     top:70px;
-    width:94vw;
-    gap:8px;
   }
+
 
   .brand-title{
-    font-size:clamp(2.4rem,10vw,4rem);
+    font-size:
+      clamp(2.4rem,10vw,4rem);
   }
 
-  .brand-heart{
-    width:148px;
-    height:148px;
+
+  .language-switch{
+    top:16px;
+    right:16px;
   }
-  .language-switch{top:16px;right:16px}
-  .virgin{height:56%;max-width:52vw}
-  .hero-photo{object-position:63% center}
-  .main-nav{grid-template-columns:repeat(2,1fr)}
-  .nav-link:nth-child(2){border-right:0}
-  .intro-card{padding:22px 10px 30px}
+
+
+  .virgin{
+    height:56%;
+    max-width:52vw;
+  }
+
+
+  .hero-photo{
+    object-position:63% center;
+  }
+
+
+  .main-nav{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+
+  .nav-link:nth-child(2){
+    border-right:0;
+  }
+
+
+  .intro-card{
+    padding:
+      22px 10px 30px;
+  }
 }
+
+
+/* =========================================================
+   PETIT TÉLÉPHONE
+   ========================================================= */
+
 @media(max-width:470px){
-  .hero{min-height:500px}
-.brand{
-  top:65px;
-  gap:6px;
+
+  .hero{
+    min-height:500px;
+  }
+
+
+  .brand{
+    top:65px;
+  }
+
+
+  .brand-title{
+    font-size:2.2rem;
+  }
+
+
+  .virgin{
+    height:49%;
+    max-width:58vw;
+  }
+
+
+  .main-nav{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .nav-link{
+    font-size:.75rem;
+
+    padding:
+      16px 5px;
+  }
+
+
+  .intro-card p{
+    font-size:1rem;
+    line-height:1.65;
+  }
 }
 
-.brand-title{
-  font-size:2.2rem;
-}
 
-.brand-heart{
-  width:108px;
-  height:108px;
-}
-  .virgin{height:49%;max-width:58vw}
-  .lang-btn span{display:block}
-  .lang-btn{padding:5px}
-  .main-nav{grid-template-columns:1fr 1fr}
-  .nav-link{font-size:.75rem;padding:16px 5px}
-  .intro-card p{font-size:1rem;line-height:1.65}
-}
+/* =========================================================
+   LANGUES SUR TÉLÉPHONE
+   Dimensions reprises du principe
+   de Herria Bihotzean
+   ========================================================= */
 
 @media(max-width:520px){
 
   .language-switch{
     top:10px;
     right:10px;
+
     gap:8px;
   }
 
+
   .lang-btn{
     min-width:54px;
-    padding:3px 5px;
+
+    padding:
+      3px 5px;
+
     gap:3px;
+
     border-radius:7px;
   }
+
 
   .lang-btn img{
     width:26px;
     height:26px;
-    margin:0 auto 3px;
+
+    margin:
+      0 auto 3px;
   }
 
+
   .lang-label{
-    font-family:Georgia,"Times New Roman",serif;
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
     font-size:.72rem;
+
     font-weight:400;
+
     line-height:1.2;
+
     white-space:nowrap;
   }
+
 
   .lang-btn.active .lang-label{
     font-weight:700;
   }
 }
-
