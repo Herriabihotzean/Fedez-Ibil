@@ -15,7 +15,11 @@ const translations = {
       "Liens",
 
     "home.text":
-      "FEDEZ IBIL (avancer de par la foi, se conduire selon la foi) vous propose de vivre l’expérience d’un pèlerinage traditionnel dans un esprit de ferveur et d’authentique amitié chrétienne. Prières et Cantiques traditionnels basques et français nous permettront d’exprimer notre Foi en Dieu et notre Espérance du Salut avec le secours de Notre-Dame. Nous voulons ainsi retisser les liens qui de tout temps ont uni Foi et culture traditionnelle locale. Pendant ce pèlerinage, nous recevrons les sacrements de l’Eglise sous leur forme tridentine."
+      `<p><strong>FEDEZ IBIL</strong> (avancer de par la foi, se conduire selon la foi) vous propose de vivre l’expérience d’un pèlerinage traditionnel dans un esprit de ferveur et d’authentique amitié chrétienne. Prières et Cantiques traditionnels de nos régions, entonnés avec joie dans l’effort de la marche, nous permettront d’exprimer notre Foi en Dieu et notre Espérance du Salut avec le secours de Notre-Dame.</p>
+
+      <p>Soucieux de manifester notre appartenance à l’Eglise universelle à travers cette dévotion catholique, nous voulons aussi retisser les liens qui de tout temps ont uni Foi et culture traditionnelle locale. Dans cet esprit, Arrebastir fait le choix de la liturgie tridentine, à la fois familière de nos prédécesseurs et exprimant dans la plénitude de son déploiement une Foi vivante et intemporelle. Ainsi, nous recevrons les sacrements de l’Eglise sous leur forme traditionnelle.</p>
+
+      <p>À très vite !</p>`
 
   },
 
@@ -35,14 +39,21 @@ const translations = {
       "Loturak",
 
     "home.text":
-      "FEDEZ IBIL-ek beila ohiko baten entseatzerat gomitatzen zaituzte, debozionezko giroan eta egiazko adiskidetasun giristinoan. Eskualdun eta frantses othoitz eta kantu tradizionalek Jainkoaren baitako gure Fedea eta Salbamenduaren Esperantza adierazten lagunduko gaituzte, Andredena Mariaren laguntzarekin. Horrela, aspaldidanik Fedea eta tokiko kultura tradizionala elkartu dituzten lokarriak berriz ehundu nahi ditugu. Beila huntan, Elizaren sakramenduak forma tridentinoan errezibituko ditugu."
+      `<p><strong>FEDEZ IBIL</strong> elkarteak beila tradizional baten entseatzeko parada eskaintzen dautzue, fedezko eta zinezko adixkidantza giristino izpiritu batekin. Gure herrietako otoitz eta kantika tradizionalak bozkarioan ozendatuak izanen dire, bideko nekeetan. Horrela, gure Jainkoaren baitako Fedea eta gure Salbamenduaren itxaropena adierazten ahalko ditugu, Andre Dena Mariaren grazia lagun.</p>
+
+      <p>Debozio katoliko horren bidez, ezagutarazi nahi dugu Elizari leial gatzaizkola. Bertzalde, Fedea eta lekuko ohidurak elgarrekin estekatzen dituzten betiko loturak berpiztu nahi ditugu ere bai. Gogo huntan, Arrebastir elkarteak Trenteko Konzilioaren liturgia atxikitzen du, zeren gure aitzinekoeri ohidurazkoa baitzitzaioten, baita ere bere hedapen osoan, betiko Fede bizi baten adierazpena baita. Horrela, Elizako sakramenduak molde tradizionalean errezebituko ditugu.</p>
+
+      <p>Laster arte !</p>`
 
   }
 
 };
 
 
-/* LANGUE */
+
+/* =========================================================
+   LANGUE
+   ========================================================= */
 
 function applyLanguage(lang){
 
@@ -58,6 +69,8 @@ function applyLanguage(lang){
       : "fr";
 
 
+  /* Traduction des éléments simples */
+
   document
     .querySelectorAll("[data-i18n]")
     .forEach(element => {
@@ -65,10 +78,7 @@ function applyLanguage(lang){
       const key =
         element.dataset.i18n;
 
-
-      if(
-        translations[selected][key]
-      ){
+      if(translations[selected][key]){
 
         element.textContent =
           translations[selected][key];
@@ -78,11 +88,27 @@ function applyLanguage(lang){
     });
 
 
+  /* Traduction du texte d'accueil avec paragraphes et gras */
 
-  /*
-     Libellés volontairement
-     en minuscules.
-  */
+  document
+    .querySelectorAll("[data-i18n-html]")
+    .forEach(element => {
+
+      const key =
+        element.dataset.i18nHtml;
+
+      if(translations[selected][key]){
+
+        element.innerHTML =
+          translations[selected][key];
+
+      }
+
+    });
+
+
+
+  /* Libellés des langues en minuscules */
 
   const labels =
     selected === "eu"
@@ -105,7 +131,6 @@ function applyLanguage(lang){
       const target =
         element.dataset.langLabel;
 
-
       if(labels[target]){
 
         element.textContent =
@@ -117,20 +142,19 @@ function applyLanguage(lang){
 
 
 
+  /* Cadre uniquement autour de la langue sélectionnée */
+
   document
     .querySelectorAll(".lang-btn")
     .forEach(button => {
 
       const isActive =
-        button.dataset.lang
-        === selected;
-
+        button.dataset.lang === selected;
 
       button.classList.toggle(
         "active",
         isActive
       );
-
 
       button.setAttribute(
         "aria-pressed",
@@ -142,6 +166,8 @@ function applyLanguage(lang){
     });
 
 
+
+  /* Mémorisation de la langue */
 
   localStorage.setItem(
     "fedez-ibil-lang",
@@ -157,7 +183,9 @@ function applyLanguage(lang){
 
 
 
-/* LARGEUR DU SACRÉ-CŒUR */
+/* =========================================================
+   LARGEUR DU SACRÉ-CŒUR
+   ========================================================= */
 
 function sizeSacredHeart(){
 
@@ -166,12 +194,10 @@ function sizeSacredHeart(){
       ".brand-heart"
     );
 
-
   const letterD =
     document.getElementById(
       "logo-start"
     );
-
 
   const letterB =
     document.getElementById(
@@ -184,80 +210,62 @@ function sizeSacredHeart(){
     !letterD ||
     !letterB
   ){
-
     return;
-
   }
 
 
   const dRect =
-    letterD
-      .getBoundingClientRect();
-
+    letterD.getBoundingClientRect();
 
   const bRect =
-    letterB
-      .getBoundingClientRect();
+    letterB.getBoundingClientRect();
 
 
   /*
      Largeur normale :
-     bord gauche du D de FEDEZ
-     jusqu'au bord droit du B de IBIL.
+     du bord gauche du D de FEDEZ
+     au bord droit du B de IBIL.
   */
 
   let logoWidth =
-    bRect.right
-    -
-    dRect.left;
+    bRect.right - dRect.left;
 
 
   /*
-     Écran très étroit :
-     réduction légère du logo
-     pour éviter qu'il masque
-     la main de l'Enfant Jésus.
+     Sur écran très étroit :
+     réduction à 75 %.
 
-     86 % donne une réduction
-     sensible mais pas excessive.
-
-     height:auto conserve
-     exactement les proportions.
+     Je conserve ici ton réglage actuel.
   */
 
   if(
     window.innerWidth <= 380
   ){
-
     logoWidth *= 0.75;
-
   }
 
 
   if(
     logoWidth > 0
   ){
-
     heart.style.width =
       `${logoWidth}px`;
-
   }
 
 }
 
 
 
-/* INITIALISATION */
+/* =========================================================
+   INITIALISATION
+   ========================================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
   () => {
 
-
     document
-      .querySelectorAll(
-        ".lang-btn"
-      )
+      .querySelectorAll(".lang-btn")
       .forEach(button => {
 
         button.addEventListener(
@@ -277,8 +285,7 @@ document.addEventListener(
     const savedLanguage =
       localStorage.getItem(
         "fedez-ibil-lang"
-      )
-      || "fr";
+      ) || "fr";
 
 
     applyLanguage(
@@ -293,11 +300,11 @@ document.addEventListener(
 
 
 
-/* ATTENDRE LA POLICE CINZEL */
+/* =========================================================
+   ATTENDRE LE CHARGEMENT DE CINZEL
+   ========================================================= */
 
-if(
-  document.fonts
-){
+if(document.fonts){
 
   document.fonts.ready.then(
     () => {
@@ -311,7 +318,9 @@ if(
 
 
 
-/* REDIMENSIONNEMENT */
+/* =========================================================
+   REDIMENSIONNEMENT
+   ========================================================= */
 
 window.addEventListener(
   "resize",
