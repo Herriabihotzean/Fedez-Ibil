@@ -222,7 +222,6 @@ body{
   z-index:10;
 }
 
-
 .hero-bottom-line{
   position:absolute;
 
@@ -329,14 +328,20 @@ body{
 
   padding:28px 60px 36px;
 
-  text-align:center;
-
   background:rgba(255,255,255,.28);
 }
 
-.intro-card p{
-  margin:0;
 
+/*
+   TEXTE D'ACCUEIL
+
+   Les trois paragraphes sont justifiés.
+   FEDEZ IBIL n'a aucun traitement en gras :
+   il reste simplement écrit en capitales
+   dans le HTML / JavaScript.
+*/
+
+.intro-text{
   color:#0e4f86;
 
   font-size:clamp(
@@ -346,6 +351,16 @@ body{
   );
 
   line-height:1.8;
+
+  text-align:justify;
+}
+
+.intro-text p{
+  margin:0 0 1.25em 0;
+}
+
+.intro-text p:last-child{
+  margin-bottom:0;
 }
 
 
@@ -359,6 +374,8 @@ body{
   font-size:1.45rem;
 
   letter-spacing:.45em;
+
+  text-align:center;
 }
 
 .ornament::before,
@@ -527,7 +544,7 @@ footer{
     padding:16px 5px;
   }
 
-  .intro-card p{
+  .intro-text{
     font-size:1rem;
     line-height:1.65;
   }
