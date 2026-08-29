@@ -17,7 +17,7 @@ const translations = {
     "home.text":
       `<p>FEDEZ IBIL (avancer de par la foi, se conduire selon la foi) vous propose de vivre l’expérience d’un pèlerinage traditionnel dans un esprit de ferveur et d’authentique amitié chrétienne. Prières et Cantiques traditionnels de nos régions, entonnés avec joie dans l’effort de la marche, nous permettront d’exprimer notre Foi en Dieu et notre Espérance du Salut avec le secours de Notre-Dame.</p>
 
-      <p>Désireux de manifester notre appartenance à l’Eglise universelle à travers cette dévotion catholique, nous voulons aussi retisser les liens qui de tout temps ont uni Foi et culture traditionnelle locale. Dans cet esprit, Arrebastir fait le choix de la liturgie tridentine, à la fois familière de nos prédécesseurs et exprimant dans la plénitude de son déploiement une Foi vivante et intemporelle. Ainsi, nous recevrons les sacrements de l’Eglise sous leur forme traditionnelle.</p>
+      <p>Désireux de manifester notre appartenance à l’Eglise universelle à travers cette dévotion catholique, nous voulons aussi retisser les liens qui de tout temps ont uni Foi et culture traditionnelle locale. Dans cet esprit, FEDEZ IBIL fait le choix de la liturgie tridentine, à la fois familière de nos prédécesseurs et exprimant dans la plénitude de son déploiement une Foi vivante et intemporelle. Ainsi, nous recevrons les sacrements de l’Eglise sous leur forme traditionnelle.</p>
 
       <p>À très vite !</p>`
 
@@ -41,7 +41,7 @@ const translations = {
     "home.text":
       `<p>FEDEZ IBIL elkarteak beila tradizional baten entseatzeko parada eskaintzen dautzue, fedezko eta zinezko adixkidantza giristino izpiritu batekin. Gure herrietako otoitz eta kantika tradizionalak bozkarioan ozendatuak izanen dire, bideko nekeetan. Horrela, gure Jainkoaren baitako Fedea eta gure Salbamenduaren itxaropena adierazten ahalko ditugu, Andre Dena Mariaren grazia lagun.</p>
 
-      <p>Debozio katoliko horren bidez, ezagutarazi nahi dugu Elizari leial gatzaizkola. Bertzalde, Fedea eta lekuko ohidurak elgarrekin estekatzen dituzten betiko loturak berpiztu nahi ditugu ere bai. Gogo huntan, Arrebastir elkarteak Trenteko Konzilioaren liturgia atxikitzen du, zeren gure aitzinekoeri ohidurazkoa baitzitzaioten, baita ere bere hedapen osoan, betiko Fede bizi baten adierazpena baita. Horrela, Elizako sakramenduak molde tradizionalean errezebituko ditugu.</p>
+      <p>Debozio katoliko horren bidez, ezagutarazi nahi dugu Elizari leial gatzaizkola. Bertzalde, Fedea eta lekuko ohidurak elgarrekin estekatzen dituzten betiko loturak berpiztu nahi ditugu ere bai. Gogo huntan, FEDEZ IBIL elkarteak Trenteko Konzilioaren liturgia atxikitzen du, zeren gure aitzinekoeri ohidurazkoa baitzitzaioten, baita ere bere hedapen osoan, betiko Fede bizi baten adierazpena baita. Horrela, Elizako sakramenduak molde tradizionalean errezebituko ditugu.</p>
 
       <p>Laster arte !</p>`
 
