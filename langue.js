@@ -48,7 +48,7 @@ const translations = {
       "Horra gizonak hainbat maitatu dituen Bihotza…",
 
     "hero.subtitle":
-      "Eskualdunak ohidurazko beilan – 2026ko urriaren 17 eta 18an",
+  'Eskual beila tradizionala – 2026<sup>ko</sup> urriaren 17 eta 18<sup>an</sup>',
 
     "home.text":
       `<p>FEDEZ IBIL elkarteak beila tradizional baten entseatzeko parada eskaintzen dautzue, fedezko eta zinezko adixkidantza giristino izpiritu batekin. Gure herrietako otoitz eta kantika tradizionalak bozkarioan ozendatuak izanen dire, bideko nekeetan. Horrela, gure Jainkoaren baitako Fedea eta gure Salbamenduaren itxaropena adierazten ahalko ditugu, Andre Dena Mariaren grazia lagun.</p>
