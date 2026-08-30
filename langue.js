@@ -18,7 +18,7 @@ const translations = {
       "Voilà ce Cœur qui a tant aimé les hommes…",
 
     "hero.subtitle":
-      "Pèlerinage basque traditionnel – 17 et 18 octobre 2026",
+      "Pèlerinage traditionnel basque – 17 et 18 octobre 2026",
 
     "home.text":
       `<p>FEDEZ IBIL (avancer de par la foi, se conduire selon la foi) vous propose de vivre l’expérience d’un pèlerinage traditionnel dans un esprit de ferveur et d’authentique amitié chrétienne. Prières et Cantiques traditionnels de nos régions, entonnés avec joie dans l’effort de la marche, nous permettront d’exprimer notre Foi en Dieu et notre Espérance du Salut avec le secours de Notre-Dame.</p>
@@ -48,7 +48,7 @@ const translations = {
       "Horra gizonak hainbat maitatu dituen Bihotza…",
 
     "hero.subtitle":
-      "Eskual beila tradizionala – 2026ko urriaren 17 eta 18an",
+      "Eskualdunak ohidurazko beilan – 2026ko urriaren 17 eta 18an",
 
     "home.text":
       `<p>FEDEZ IBIL elkarteak beila tradizional baten entseatzeko parada eskaintzen dautzue, fedezko eta zinezko adixkidantza giristino izpiritu batekin. Gure herrietako otoitz eta kantika tradizionalak bozkarioan ozendatuak izanen dire, bideko nekeetan. Horrela, gure Jainkoaren baitako Fedea eta gure Salbamenduaren itxaropena adierazten ahalko ditugu, Andre Dena Mariaren grazia lagun.</p>
