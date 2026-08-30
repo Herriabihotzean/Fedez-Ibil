@@ -15,7 +15,7 @@ const translations = {
       "Liens",
 
     "hero.quote":
-      "Voilà ce Cœur qui a tant aimé les hommes…",
+  "« Voilà ce Cœur qui a tant aimé les hommes… »",
 
     "hero.subtitle":
       "Pèlerinage traditionnel basque – 17 et 18 octobre 2026",
@@ -45,7 +45,7 @@ const translations = {
       "Loturak",
 
     "hero.quote":
-      "Horra gizonak hainbat maitatu dituen Bihotza…",
+  "« Horra gizonak hainbat maitatu dituen Bihotza… »",
 
     "hero.subtitle":
   'Eskual beila tradizionala – 2026<sup>ko</sup> urriaren 17 eta 18<sup>an</sup>',
