@@ -218,14 +218,13 @@ body{
   left:50%;
 
   /*
-     La position verticale exacte est calculée
-     dans langue.js en fonction du bas réel
-     du Sacré-Cœur et du bas de la photographie.
+     La position verticale de ce bloc
+     est calculée dans langue.js.
   */
 
   top:78%;
 
-  transform:translate(-50%,-50%);
+  transform:translateX(-50%);
 
   z-index:25;
 
@@ -241,11 +240,10 @@ body{
     serif;
 
   /*
-     Même formule que FEDEZ IBIL.
-
-     Les tailles des deux lignes sont ensuite
-     exprimées en "em". Elles restent donc
-     proportionnelles à la taille du titre.
+     Même formule de référence que FEDEZ IBIL.
+     Les tailles ci-dessous étant exprimées
+     en em, elles restent proportionnelles
+     à la taille du titre.
   */
 
   font-size:clamp(
@@ -264,6 +262,15 @@ body{
 /* « Voilà ce Cœur qui a tant aimé les hommes… » */
 
 .hero-quote{
+  position:absolute;
+
+  left:50%;
+  top:0;
+
+  width:100%;
+
+  transform:translateX(-50%);
+
   font-size:.30em;
 
   line-height:1.25;
@@ -271,13 +278,30 @@ body{
   font-weight:400;
 
   text-transform:none;
+
+  white-space:nowrap;
 }
 
 
 /* Pèlerinage basque traditionnel – 17 et 18 octobre 2026 */
 
 .hero-subtitle{
-  margin-top:.55em;
+  position:absolute;
+
+  left:50%;
+
+  /*
+     Sa position verticale exacte est
+     calculée dans langue.js afin que
+     cette ligne se trouve à équidistance
+     de la citation et du bas de la photo.
+  */
+
+  top:50px;
+
+  width:100%;
+
+  transform:translateX(-50%);
 
   font-size:.25em;
 
@@ -286,7 +310,12 @@ body{
   font-weight:400;
 
   text-transform:none;
+
+  white-space:nowrap;
 }
+
+
+/* Exposants basques : 2026ko / 18an */
 
 .hero-subtitle sup{
   font-size:.65em;
@@ -624,9 +653,8 @@ footer{
 
 
   /*
-     Légère adaptation pour éviter que les
-     deux textes ne prennent trop de place
-     sur les écrans étroits.
+     Sur téléphone, la devise dispose
+     d'un peu plus de largeur.
   */
 
   .hero-caption{
