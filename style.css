@@ -279,13 +279,19 @@ body{
 .hero-subtitle{
   margin-top:.55em;
 
-  font-size:.20em;
+  font-size:.25em;
 
   line-height:1.3;
 
   font-weight:400;
 
   text-transform:none;
+}
+
+.hero-subtitle sup{
+  font-size:.65em;
+  vertical-align:super;
+  line-height:0;
 }
 
 
@@ -632,7 +638,7 @@ footer{
   }
 
   .hero-subtitle{
-    font-size:.19em;
+    font-size:.23em;
   }
 }
 
