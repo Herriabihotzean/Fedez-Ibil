@@ -14,6 +14,12 @@ const translations = {
     "nav.links":
       "Liens",
 
+    "hero.quote":
+      "Voilà ce Cœur qui a tant aimé les hommes…",
+
+    "hero.subtitle":
+      "Pèlerinage basque traditionnel – 17 et 18 octobre 2026",
+
     "home.text":
       `<p>FEDEZ IBIL (avancer de par la foi, se conduire selon la foi) vous propose de vivre l’expérience d’un pèlerinage traditionnel dans un esprit de ferveur et d’authentique amitié chrétienne. Prières et Cantiques traditionnels de nos régions, entonnés avec joie dans l’effort de la marche, nous permettront d’exprimer notre Foi en Dieu et notre Espérance du Salut avec le secours de Notre-Dame.</p>
 
@@ -37,6 +43,12 @@ const translations = {
 
     "nav.links":
       "Loturak",
+
+    "hero.quote":
+      "Horra gizonak hainbat maitatu dituen Bihotza…",
+
+    "hero.subtitle":
+      "Eskual beila tradizionala – 2026ko urriaren 17 eta 18an",
 
     "home.text":
       `<p>FEDEZ IBIL elkarteak beila tradizional baten entseatzeko parada eskaintzen dautzue, fedezko eta zinezko adixkidantza giristino izpiritu batekin. Gure herrietako otoitz eta kantika tradizionalak bozkarioan ozendatuak izanen dire, bideko nekeetan. Horrela, gure Jainkoaren baitako Fedea eta gure Salbamenduaren itxaropena adierazten ahalko ditugu, Andre Dena Mariaren grazia lagun.</p>
@@ -88,7 +100,7 @@ function applyLanguage(lang){
     });
 
 
-  /* Traduction du texte d'accueil avec paragraphes et gras */
+  /* Traduction du texte d'accueil avec paragraphes */
 
   document
     .querySelectorAll("[data-i18n-html]")
@@ -175,6 +187,11 @@ function applyLanguage(lang){
   );
 
 
+  /*
+     Recalcul du logo puis de la position
+     de la devise.
+  */
+
   requestAnimationFrame(
     sizeSacredHeart
   );
@@ -234,8 +251,6 @@ function sizeSacredHeart(){
   /*
      Sur écran très étroit :
      réduction à 75 %.
-
-     Je conserve ici ton réglage actuel.
   */
 
   if(
@@ -252,6 +267,96 @@ function sizeSacredHeart(){
       `${logoWidth}px`;
   }
 
+
+  /*
+     On attend que le navigateur ait
+     appliqué la nouvelle dimension
+     avant de mesurer le logo.
+  */
+
+  requestAnimationFrame(
+    positionHeroCaption
+  );
+
+}
+
+
+
+/* =========================================================
+   POSITION DE LA DEVISE
+   ========================================================= */
+
+function positionHeroCaption(){
+
+  const hero =
+    document.querySelector(
+      ".hero"
+    );
+
+  const heart =
+    document.querySelector(
+      ".brand-heart"
+    );
+
+  const caption =
+    document.querySelector(
+      ".hero-caption"
+    );
+
+
+  if(
+    !hero ||
+    !heart ||
+    !caption
+  ){
+    return;
+  }
+
+
+  const heroRect =
+    hero.getBoundingClientRect();
+
+  const heartRect =
+    heart.getBoundingClientRect();
+
+
+  /*
+     Position du bas du Sacré-Cœur
+     par rapport au haut de l'image.
+  */
+
+  const heartBottom =
+    heartRect.bottom -
+    heroRect.top;
+
+
+  /*
+     Espace compris entre le bas
+     du Sacré-Cœur et le bas
+     de l'illustration.
+  */
+
+  const freeSpace =
+    heroRect.height -
+    heartBottom;
+
+
+  /*
+     Milieu exact de cet espace.
+  */
+
+  const middle =
+    heartBottom +
+    (freeSpace / 2);
+
+
+  /*
+     Le bloc est centré sur cette position.
+  */
+
+  caption.style.top =
+    `${middle}px`;
+
 }
 
 
@@ -265,7 +370,9 @@ document.addEventListener(
   () => {
 
     document
-      .querySelectorAll(".lang-btn")
+      .querySelectorAll(
+        ".lang-btn"
+      )
       .forEach(button => {
 
         button.addEventListener(
