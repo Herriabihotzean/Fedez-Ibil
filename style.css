@@ -24,7 +24,9 @@ body{
 }
 
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
   position:relative;
@@ -59,7 +61,9 @@ body{
 }
 
 
-/* LANGUES : TOUJOURS AU-DESSUS DE TOUT */
+/* =========================================================
+   LANGUES
+   ========================================================= */
 
 .language-switch{
   position:fixed;
@@ -127,7 +131,9 @@ body{
 }
 
 
-/* FEDEZ IBIL */
+/* =========================================================
+   FEDEZ IBIL
+   ========================================================= */
 
 .brand{
   position:absolute;
@@ -177,7 +183,9 @@ body{
 }
 
 
-/* SACRÉ-CŒUR */
+/* =========================================================
+   SACRÉ-CŒUR
+   ========================================================= */
 
 .brand-heart{
   position:absolute;
@@ -200,7 +208,90 @@ body{
 }
 
 
-/* VIERGE */
+/* =========================================================
+   DEVISE ET DATE DU PÈLERINAGE
+   ========================================================= */
+
+.hero-caption{
+  position:absolute;
+
+  left:50%;
+
+  /*
+     La position verticale exacte est calculée
+     dans langue.js en fonction du bas réel
+     du Sacré-Cœur et du bas de la photographie.
+  */
+
+  top:78%;
+
+  transform:translate(-50%,-50%);
+
+  z-index:25;
+
+  width:min(88%,1100px);
+
+  text-align:center;
+
+  color:#fff;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  /*
+     Même formule que FEDEZ IBIL.
+
+     Les tailles des deux lignes sont ensuite
+     exprimées en "em". Elles restent donc
+     proportionnelles à la taille du titre.
+  */
+
+  font-size:clamp(
+    50px,
+    calc(35.5px + 2.97vw),
+    80px
+  );
+
+  text-shadow:
+    0 2px 7px rgba(0,35,65,.72);
+
+  pointer-events:none;
+}
+
+
+/* « Voilà ce Cœur qui a tant aimé les hommes… » */
+
+.hero-quote{
+  font-size:.30em;
+
+  line-height:1.25;
+
+  font-weight:400;
+
+  text-transform:none;
+}
+
+
+/* Pèlerinage basque traditionnel – 17 et 18 octobre 2026 */
+
+.hero-subtitle{
+  margin-top:.55em;
+
+  font-size:.20em;
+
+  line-height:1.3;
+
+  font-weight:400;
+
+  text-transform:none;
+}
+
+
+/* =========================================================
+   VIERGE
+   ========================================================= */
 
 .virgin{
   position:absolute;
@@ -237,7 +328,9 @@ body{
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .main-nav{
   position:relative;
@@ -309,7 +402,9 @@ body{
 }
 
 
-/* CONTENU */
+/* =========================================================
+   CONTENU
+   ========================================================= */
 
 .home-main{
   position:relative;
@@ -332,14 +427,9 @@ body{
 }
 
 
-/*
+/* =========================================================
    TEXTE D'ACCUEIL
-
-   Les trois paragraphes sont justifiés.
-   FEDEZ IBIL n'a aucun traitement en gras :
-   il reste simplement écrit en capitales
-   dans le HTML / JavaScript.
-*/
+   ========================================================= */
 
 .intro-text{
   color:#0e4f86;
@@ -364,7 +454,9 @@ body{
 }
 
 
-/* ORNEMENTS */
+/* =========================================================
+   ORNEMENTS
+   ========================================================= */
 
 .ornament{
   margin:0 auto 15px;
@@ -401,7 +493,9 @@ body{
 }
 
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer{
   padding:18px;
@@ -418,7 +512,9 @@ footer{
 }
 
 
-/* PAGES PROVISOIRES */
+/* =========================================================
+   PAGES PROVISOIRES
+   ========================================================= */
 
 .placeholder{
   max-width:900px;
@@ -441,7 +537,9 @@ footer{
 }
 
 
-/* TABLETTE */
+/* =========================================================
+   TABLETTE
+   ========================================================= */
 
 @media(max-width:800px){
 
@@ -469,7 +567,9 @@ footer{
 }
 
 
-/* TÉLÉPHONE */
+/* =========================================================
+   TÉLÉPHONE
+   ========================================================= */
 
 @media(max-width:520px){
 
@@ -515,10 +615,31 @@ footer{
   .lang-btn.active .lang-label{
     font-weight:700;
   }
+
+
+  /*
+     Légère adaptation pour éviter que les
+     deux textes ne prennent trop de place
+     sur les écrans étroits.
+  */
+
+  .hero-caption{
+    width:94%;
+  }
+
+  .hero-quote{
+    font-size:.29em;
+  }
+
+  .hero-subtitle{
+    font-size:.19em;
+  }
 }
 
 
-/* ÉCRAN TRÈS ÉTROIT */
+/* =========================================================
+   ÉCRAN TRÈS ÉTROIT
+   ========================================================= */
 
 @media(max-width:380px){
 
@@ -529,7 +650,9 @@ footer{
 }
 
 
-/* PETIT TÉLÉPHONE */
+/* =========================================================
+   PETIT TÉLÉPHONE
+   ========================================================= */
 
 @media(max-width:470px){
 
