@@ -289,25 +289,31 @@ function sizeSacredHeart(){
 function positionHeroCaption(){
 
   const hero =
-    document.querySelector(
-      ".hero"
-    );
+    document.querySelector(".hero");
 
   const heart =
-    document.querySelector(
-      ".brand-heart"
-    );
+    document.querySelector(".brand-heart");
 
   const caption =
-    document.querySelector(
-      ".hero-caption"
-    );
+    document.querySelector(".hero-caption");
+
+  const quote =
+    document.querySelector(".hero-quote");
+
+  const subtitle =
+    document.querySelector(".hero-subtitle");
+
+  const nav =
+    document.querySelector(".main-nav");
 
 
   if(
     !hero ||
     !heart ||
-    !caption
+    !caption ||
+    !quote ||
+    !subtitle ||
+    !nav
   ){
     return;
   }
@@ -319,43 +325,57 @@ function positionHeroCaption(){
   const heartRect =
     heart.getBoundingClientRect();
 
+  const navRect =
+    nav.getBoundingClientRect();
+
 
   /*
-     Position du bas du Sacré-Cœur
-     par rapport au haut de l'image.
+     Bas réel de l'image visible :
+     on prend le haut de la barre de navigation.
+  */
+
+  const visibleBottom =
+    navRect.top - heroRect.top;
+
+
+  /*
+     Bas du Sacré-Cœur
+     par rapport au haut du hero.
   */
 
   const heartBottom =
-    heartRect.bottom -
-    heroRect.top;
+    heartRect.bottom - heroRect.top;
 
 
   /*
-     Espace compris entre le bas
-     du Sacré-Cœur et le bas
-     de l'illustration.
+     Position de la citation :
+     à mi-distance entre
+     le bas du Sacré-Cœur
+     et le bas visible de l'image.
   */
 
-  const freeSpace =
-    heroRect.height -
-    heartBottom;
-
-
-  /*
-     Milieu exact de cet espace.
-  */
-
-  const middle =
+  const quoteY =
     heartBottom +
-    (freeSpace / 2);
+    ((visibleBottom - heartBottom) / 2);
 
-
-  /*
-     Le bloc est centré sur cette position.
-  */
 
   caption.style.top =
-    `${middle}px`;
+    `${quoteY}px`;
+
+
+  /*
+     Position du sous-titre :
+     à mi-distance entre
+     la ligne de la citation
+     et le bas visible de l'image.
+  */
+
+  const subtitleY =
+    (visibleBottom - quoteY) / 2;
+
+
+  subtitle.style.top =
+    `${subtitleY}px`;
 
 }
 
