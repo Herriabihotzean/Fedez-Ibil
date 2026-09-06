@@ -10,7 +10,13 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="langue.js"></script>
 </head>
-<body data-page="links">
+<body data-page="links" class="secondary-page">
+
+  <!-- RETOUR VISUEL À L’ACCUEIL : aucun fond, aucune bordure -->
+  <a class="info-home-link" href="index.html" aria-label="Retour à l'accueil">
+    <span class="info-home-title">FEDEZ IBIL</span>
+    <img src="images/bihotz-sakratua-xuria.svg" alt="" class="info-home-heart">
+  </a>
   <div class="language-switch" aria-label="Choix de la langue">
     <button class="lang-btn active" data-lang="fr" type="button" aria-label="français">
       <img src="images/blason-france.svg" alt=""><span class="lang-label" data-lang-label="fr">français</span>
@@ -20,7 +26,7 @@
     </button>
   </div>
 
-  <nav class="main-nav" aria-label="Navigation principale">
+  <nav class="main-nav info-main-nav" aria-label="Navigation principale">
     <a class="nav-link" href="index.html" data-i18n="nav.home">Accueil</a>
     <a class="nav-link" href="informations.html" data-i18n="nav.info">Informations</a>
     <a class="nav-link" href="inscriptions.html" data-i18n="nav.signup">Inscriptions</a>
@@ -30,7 +36,7 @@
   <main class="placeholder">
     <h1 data-i18n="nav.links">Liens</h1>
     <p>Cette page sera complétée dans un second temps.</p>
-    <p><a href="index.html" data-i18n="info.back">← Retour à l’accueil</a></p>
+    <p class="info-back-wrap"><a class="info-back-button" href="index.html" data-i18n="info.back">← Retour à l’accueil</a></p>
   </main>
 </body>
 </html>

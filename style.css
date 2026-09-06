@@ -728,7 +728,7 @@ footer{
   align-items:center;
   justify-content:center;
 
-  color:#fff;
+  color:#0e4f86;
   text-decoration:none;
   text-align:center;
 
@@ -741,11 +741,11 @@ footer{
 
 .info-home-link:hover .info-home-title,
 .info-home-link:focus-visible .info-home-title{
-  text-shadow:0 0 7px rgba(255,255,255,.45);
+  text-shadow:0 0 7px rgba(14,79,134,.22);
 }
 
 .info-home-link:focus-visible{
-  outline:1px solid rgba(255,255,255,.75);
+  outline:1px solid rgba(14,79,134,.55);
   outline-offset:6px;
   border-radius:2px;
 }
@@ -957,7 +957,7 @@ body.poster-open{
 }
 
 
-/* Navigation de la page Informations */
+/* Navigation des pages secondaires */
 .info-main-nav{
   margin-top:104px;
 }
