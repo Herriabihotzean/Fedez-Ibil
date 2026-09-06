@@ -9,10 +9,90 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="langue.js"></script>
+
+  <style>
+    .signup-intro {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .signup-intro p {
+      margin: .7rem 0;
+    }
+
+    .signup-open-button,
+    .signup-submit-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .85rem 1.35rem;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      background: transparent;
+      color: inherit;
+      font: 700 .95rem/1 "Libre Baskerville", Georgia, serif;
+      cursor: pointer;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .signup-open-button:hover,
+    .signup-submit-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .signup-form-wrap {
+      display: none;
+      max-width: 560px;
+      margin: 1.6rem auto 0;
+      text-align: left;
+    }
+
+    .signup-form-wrap.is-open {
+      display: block;
+    }
+
+    .signup-field {
+      margin-bottom: 1rem;
+    }
+
+    .signup-field label {
+      display: block;
+      margin-bottom: .4rem;
+      font-weight: 700;
+    }
+
+    .signup-field input {
+      width: 100%;
+      padding: .8rem .9rem;
+      border: 1px solid rgba(23,54,76,.35);
+      border-radius: 8px;
+      background: rgba(255,255,255,.92);
+      color: #17364c;
+      font: inherit;
+    }
+
+    .signup-submit-wrap {
+      text-align: center;
+    }
+
+    .signup-success {
+      display: none;
+      margin: 1.25rem auto 0;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .signup-success.is-visible {
+      display: block;
+    }
+
+    [data-signup-lang="eu"] {
+      display: none;
+    }
+  </style>
 </head>
 <body data-page="signup" class="information-page">
 
-  <!-- EXACTEMENT LE MÊME RETOUR VISUEL QUE SUR INFORMATIONS -->
   <a class="info-home-link" href="index.html" aria-label="Retour à l'accueil">
     <span class="info-home-title">FEDEZ IBIL</span>
     <img src="images/bihotz-sakratua-xuria.svg" alt="" class="info-home-heart">
@@ -40,7 +120,66 @@
     <section class="secondary-card">
       <h1 class="secondary-title" data-i18n="nav.signup">Inscriptions</h1>
       <div class="ornament" aria-hidden="true">✦</div>
-      <p class="secondary-text" style="text-align:center">Cette page sera complétée dans un second temps.</p>
+
+      <div class="signup-intro">
+        <div data-signup-lang="fr">
+          <p class="secondary-text">Les inscriptions au pèlerinage FEDEZ IBIL ouvriront bientôt !</p>
+          <p class="secondary-text">En attendant, souhaitez-vous recevoir les informations sur le pèlerinage ?</p>
+          <button class="signup-open-button" type="button" data-open-signup>RECEVOIR LES INFORMATIONS</button>
+        </div>
+
+        <div data-signup-lang="eu">
+          <p class="secondary-text">FEDEZ IBIL beilarako izen-emaiteak laster idekiko dira !</p>
+          <p class="secondary-text">Bitartean, beilaren berriak errezebitu nahi ditutzu?</p>
+          <button class="signup-open-button" type="button" data-open-signup>BERRIAK ERREZEBITU</button>
+        </div>
+      </div>
+
+      <div class="signup-form-wrap" id="signupFormWrap">
+        <form
+          id="signupForm"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSc6cSUWqG0R1Aetq0_B2ZTmRG5Ru9pyLRTAKJTzEG4X6JAKHg/formResponse"
+          method="POST"
+          target="hidden_iframe"
+        >
+          <div class="signup-field" data-signup-lang="fr">
+            <label for="nom-fr">Nom *</label>
+            <input id="nom-fr" name="entry.431775666" type="text" required autocomplete="family-name">
+          </div>
+          <div class="signup-field" data-signup-lang="fr">
+            <label for="prenom-fr">Prénom</label>
+            <input id="prenom-fr" name="entry.356603656" type="text" autocomplete="given-name">
+          </div>
+          <div class="signup-field" data-signup-lang="fr">
+            <label for="telephone-fr">Numéro de téléphone *</label>
+            <input id="telephone-fr" name="entry.1415712913" type="tel" required autocomplete="tel">
+          </div>
+
+          <div class="signup-field" data-signup-lang="eu">
+            <label for="nom-eu">Deitura *</label>
+            <input id="nom-eu" type="text" autocomplete="family-name">
+          </div>
+          <div class="signup-field" data-signup-lang="eu">
+            <label for="prenom-eu">Izena</label>
+            <input id="prenom-eu" type="text" autocomplete="given-name">
+          </div>
+          <div class="signup-field" data-signup-lang="eu">
+            <label for="telephone-eu">Telefono zenbakia *</label>
+            <input id="telephone-eu" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="signup-submit-wrap">
+            <button class="signup-submit-button" type="submit" data-submit-fr>ENVOYER</button>
+            <button class="signup-submit-button" type="submit" data-submit-eu style="display:none">BIDALI</button>
+          </div>
+        </form>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" title="Envoi du formulaire" style="display:none"></iframe>
+      </div>
+
+      <p class="signup-success" id="signupSuccessFr">Merci. Vos coordonnées ont bien été envoyées.</p>
+      <p class="signup-success" id="signupSuccessEu">Milesker. Zure xehetasunak ongi igorriak izan dira.</p>
+
       <div class="ornament ornament-bottom" aria-hidden="true">✦</div>
       <p class="info-back-wrap">
         <a class="info-back-button" href="index.html" data-i18n="info.back">← Retour à l’accueil</a>
@@ -49,5 +188,92 @@
   </main>
 
   <footer><span>FEDEZ IBIL</span></footer>
+
+  <script>
+    (() => {
+      const frBlocks = document.querySelectorAll('[data-signup-lang="fr"]');
+      const euBlocks = document.querySelectorAll('[data-signup-lang="eu"]');
+      const openButtons = document.querySelectorAll('[data-open-signup]');
+      const formWrap = document.getElementById('signupFormWrap');
+      const form = document.getElementById('signupForm');
+      const submitFr = document.querySelector('[data-submit-fr]');
+      const submitEu = document.querySelector('[data-submit-eu]');
+      const successFr = document.getElementById('signupSuccessFr');
+      const successEu = document.getElementById('signupSuccessEu');
+
+      const frNom = document.getElementById('nom-fr');
+      const frPrenom = document.getElementById('prenom-fr');
+      const frTelephone = document.getElementById('telephone-fr');
+      const euNom = document.getElementById('nom-eu');
+      const euPrenom = document.getElementById('prenom-eu');
+      const euTelephone = document.getElementById('telephone-eu');
+
+      let currentLang = 'fr';
+      let submitted = false;
+
+      function setLanguage(lang) {
+        currentLang = lang === 'eu' ? 'eu' : 'fr';
+
+        frBlocks.forEach(el => el.style.display = currentLang === 'fr' ? '' : 'none');
+        euBlocks.forEach(el => el.style.display = currentLang === 'eu' ? '' : 'none');
+        submitFr.style.display = currentLang === 'fr' ? 'inline-block' : 'none';
+        submitEu.style.display = currentLang === 'eu' ? 'inline-block' : 'none';
+
+        frNom.required = currentLang === 'fr';
+        frTelephone.required = currentLang === 'fr';
+        euNom.required = currentLang === 'eu';
+        euTelephone.required = currentLang === 'eu';
+
+        successFr.classList.remove('is-visible');
+        successEu.classList.remove('is-visible');
+      }
+
+      function detectActiveLanguage() {
+        const active = document.querySelector('.lang-btn.active');
+        setLanguage(active?.dataset.lang || 'fr');
+      }
+
+      document.querySelectorAll('.lang-btn[data-lang]').forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+      });
+
+      openButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          formWrap.classList.add('is-open');
+          formWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      });
+
+      form.addEventListener('submit', (event) => {
+        if (currentLang === 'eu') {
+          frNom.value = euNom.value;
+          frPrenom.value = euPrenom.value;
+          frTelephone.value = euTelephone.value;
+        }
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+          return;
+        }
+
+        submitted = true;
+      });
+
+      document.getElementById('hidden_iframe').addEventListener('load', () => {
+        if (!submitted) return;
+        submitted = false;
+        formWrap.classList.remove('is-open');
+        form.reset();
+        if (currentLang === 'eu') {
+          successEu.classList.add('is-visible');
+        } else {
+          successFr.classList.add('is-visible');
+        }
+      });
+
+      window.addEventListener('load', () => setTimeout(detectActiveLanguage, 0));
+    })();
+  </script>
 </body>
 </html>
