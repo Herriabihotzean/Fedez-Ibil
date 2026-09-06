@@ -14,18 +14,6 @@ const translations = {
     "nav.links":
       "Liens",
 
-    "title.home":
-      "Fedez Ibil",
-
-    "title.info":
-      "Informations — Fedez Ibil",
-
-    "title.signup":
-      "Inscriptions — Fedez Ibil",
-
-    "title.links":
-      "Liens — Fedez Ibil",
-
     "hero.quote":
   "« Voilà ce Cœur qui a tant aimé les hommes… »",
 
@@ -56,7 +44,10 @@ const translations = {
       "Saint Michel Garicoïts (1797 - 1863)",
 
     "info.back":
-      "← Retour à l’accueil"
+      "← Retour à l’accueil",
+
+    "links.herriaDescription":
+      "Histoire, langue basque, prières et cantiques en basque et en béarnais :"
 
   },
 
@@ -74,18 +65,6 @@ const translations = {
 
     "nav.links":
       "Loturak",
-
-    "title.home":
-      "Fedez Ibil",
-
-    "title.info":
-      "Argibideak — Fedez Ibil",
-
-    "title.signup":
-      "Izen-emateak — Fedez Ibil",
-
-    "title.links":
-      "Loturak — Fedez Ibil",
 
     "hero.quote":
   "« Horra gizonak hainbat maitatu dituen Bihotza… »",
@@ -117,7 +96,10 @@ const translations = {
       "San Mixel Garikoitz (1797 - 1863)",
 
     "info.back":
-      "← Harrera-horrirat itzuli"
+      "← Harrera-horrirat itzuli",
+
+    "links.herriaDescription":
+      "Istoria, eskuara, eskuarazko othoitz eta kantikak, biarnesez ere :"
 
   }
 
@@ -141,21 +123,6 @@ function applyLanguage(lang){
     selected === "eu"
       ? "eu"
       : "fr";
-
-
-  /* Titre de l’onglet du navigateur dans la langue sélectionnée */
-
-  const page =
-    document.body.dataset.page ||
-    (location.pathname.endsWith("informations.html") ? "info" :
-     location.pathname.endsWith("inscriptions.html") ? "signup" :
-     location.pathname.endsWith("liens.html") ? "links" : "home");
-
-  const titleKey = `title.${page}`;
-
-  if(translations[selected][titleKey]){
-    document.title = translations[selected][titleKey];
-  }
 
 
   /* Traduction des éléments simples */

@@ -2,30 +2,38 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liens proposés par FEDEZ IBIL.">
   <title>Liens — Fedez Ibil</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <script defer src="langue.js"></script>
 </head>
-<body data-page="links" class="secondary-page">
+<body data-page="links" class="information-page">
 
-  <!-- RETOUR VISUEL À L’ACCUEIL : aucun fond, aucune bordure -->
+  <!-- EXACTEMENT LE MÊME RETOUR VISUEL QUE SUR INFORMATIONS -->
   <a class="info-home-link" href="index.html" aria-label="Retour à l'accueil">
     <span class="info-home-title">FEDEZ IBIL</span>
     <img src="images/bihotz-sakratua-xuria.svg" alt="" class="info-home-heart">
   </a>
+
+  <!-- LANGUES -->
   <div class="language-switch" aria-label="Choix de la langue">
     <button class="lang-btn active" data-lang="fr" type="button" aria-label="français">
-      <img src="images/blason-france.svg" alt=""><span class="lang-label" data-lang-label="fr">français</span>
+      <img src="images/blason-france.svg" alt="">
+      <span class="lang-label" data-lang-label="fr">français</span>
     </button>
     <button class="lang-btn" data-lang="eu" type="button" aria-label="basque">
-      <img src="images/blason-navarre.svg" alt=""><span class="lang-label" data-lang-label="eu">basque</span>
+      <img src="images/blason-navarre.svg" alt="">
+      <span class="lang-label" data-lang-label="eu">basque</span>
     </button>
   </div>
 
+  <!-- NAVIGATION -->
   <nav class="main-nav info-main-nav" aria-label="Navigation principale">
     <a class="nav-link" href="index.html" data-i18n="nav.home">Accueil</a>
     <a class="nav-link" href="informations.html" data-i18n="nav.info">Informations</a>
@@ -33,10 +41,38 @@
     <a class="nav-link active" href="liens.html" data-i18n="nav.links">Liens</a>
   </nav>
 
-  <main class="placeholder">
-    <h1 data-i18n="nav.links">Liens</h1>
-    <p>Cette page sera complétée dans un second temps.</p>
-    <p class="info-back-wrap"><a class="info-back-button" href="index.html" data-i18n="info.back">← Retour à l’accueil</a></p>
+  <main class="secondary-content">
+    <section class="secondary-card">
+      <h1 class="secondary-title" data-i18n="nav.links">Liens</h1>
+
+      <div class="ornament" aria-hidden="true">✦</div>
+
+      <div class="links-list">
+        <article class="external-link-entry">
+          <p class="external-link-description" data-i18n="links.herriaDescription">
+            Histoire, langue basque, prières et cantiques en basque et en béarnais :
+          </p>
+
+          <a class="hb-link-logo" href="https://herriabihotzean.fr/" aria-label="Herria Bihotzean — herriabihotzean.fr">
+            <span class="hb-link-title">Herria Bihotzean</span>
+            <span class="hb-link-crests" aria-hidden="true">
+              <img src="images/hb-blason-labourd.svg" alt="">
+              <img src="images/hb-blason-navarre.svg" alt="">
+              <img src="images/hb-blason-soule.svg" alt="">
+            </span>
+            <span class="hb-link-domain">herriabihotzean.fr</span>
+          </a>
+        </article>
+      </div>
+
+      <div class="ornament ornament-bottom" aria-hidden="true">✦</div>
+
+      <p class="info-back-wrap">
+        <a class="info-back-button" href="index.html" data-i18n="info.back">← Retour à l’accueil</a>
+      </p>
+    </section>
   </main>
+
+  <footer><span>FEDEZ IBIL</span></footer>
 </body>
 </html>

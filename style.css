@@ -970,3 +970,143 @@ body.poster-open{
     margin-top:92px;
   }
 }
+
+/* =========================================================
+   PAGES INSCRIPTIONS / LIENS
+   Même en-tête de retour que la page Informations
+   ========================================================= */
+
+.secondary-content{
+  position:relative;
+  z-index:1;
+  padding:30px 20px 54px;
+}
+
+.secondary-card{
+  width:min(980px,100%);
+  margin:0 auto;
+  padding:30px 60px 38px;
+  background:rgba(255,255,255,.28);
+}
+
+.secondary-title{
+  margin:0 0 28px;
+  color:var(--blue-deep);
+  font-family:"Cinzel",serif;
+  font-size:clamp(1.55rem,3vw,2.35rem);
+  text-align:center;
+}
+
+.secondary-text{
+  color:#0e4f86;
+  font-size:clamp(1.05rem,1.55vw,1.38rem);
+  line-height:1.8;
+}
+
+/* Premier lien : Herria Bihotzean */
+.links-list{
+  width:min(820px,100%);
+  margin:0 auto;
+}
+
+.external-link-entry{
+  margin:0 auto 28px;
+  text-align:center;
+}
+
+.external-link-description{
+  margin:0 0 22px;
+  color:#0e4f86;
+  font-size:clamp(1.05rem,1.55vw,1.30rem);
+  line-height:1.7;
+  text-align:left;
+}
+
+.hb-link-logo{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  max-width:100%;
+  padding:22px 28px 18px;
+  color:#fff;
+  background:rgba(20,55,32,.92);
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:8px;
+  text-decoration:none;
+  box-shadow:0 7px 20px rgba(7,61,100,.14);
+  transition:.16s ease;
+}
+
+.hb-link-logo:hover,
+.hb-link-logo:focus-visible{
+  background:#fff;
+  color:rgb(20,55,32);
+  transform:translateY(-2px);
+  outline:none;
+}
+
+.hb-link-title{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.65rem,4.5vw,2.8rem);
+  font-weight:700;
+  letter-spacing:.05em;
+  line-height:1.05;
+  text-transform:uppercase;
+}
+
+.hb-link-crests{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  margin-top:18px;
+}
+
+.hb-link-crests img{
+  display:block;
+  width:72px;
+  height:72px;
+  object-fit:contain;
+}
+
+.hb-link-domain{
+  display:block;
+  margin-top:14px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  text-transform:none;
+}
+
+@media(max-width:800px){
+  .secondary-card{
+    padding:26px 18px 34px;
+  }
+}
+
+@media(max-width:520px){
+  .secondary-content{
+    padding:30px 12px 42px;
+  }
+
+  .secondary-card{
+    padding:20px 8px 28px;
+  }
+
+  .hb-link-logo{
+    width:100%;
+    padding:20px 10px 16px;
+  }
+
+  .hb-link-crests{
+    gap:12px;
+  }
+
+  .hb-link-crests img{
+    width:58px;
+    height:58px;
+  }
+}

@@ -2,27 +2,30 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inscriptions — Fedez Ibil</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="langue.js"></script>
 </head>
-<body data-page="signup" class="secondary-page">
+<body data-page="signup" class="information-page">
 
-  <!-- RETOUR VISUEL À L’ACCUEIL : aucun fond, aucune bordure -->
+  <!-- EXACTEMENT LE MÊME RETOUR VISUEL QUE SUR INFORMATIONS -->
   <a class="info-home-link" href="index.html" aria-label="Retour à l'accueil">
     <span class="info-home-title">FEDEZ IBIL</span>
     <img src="images/bihotz-sakratua-xuria.svg" alt="" class="info-home-heart">
   </a>
+
   <div class="language-switch" aria-label="Choix de la langue">
     <button class="lang-btn active" data-lang="fr" type="button" aria-label="français">
-      <img src="images/blason-france.svg" alt=""><span class="lang-label" data-lang-label="fr">français</span>
+      <img src="images/blason-france.svg" alt="">
+      <span class="lang-label" data-lang-label="fr">français</span>
     </button>
     <button class="lang-btn" data-lang="eu" type="button" aria-label="basque">
-      <img src="images/blason-navarre.svg" alt=""><span class="lang-label" data-lang-label="eu">basque</span>
+      <img src="images/blason-navarre.svg" alt="">
+      <span class="lang-label" data-lang-label="eu">basque</span>
     </button>
   </div>
 
@@ -33,10 +36,18 @@
     <a class="nav-link" href="liens.html" data-i18n="nav.links">Liens</a>
   </nav>
 
-  <main class="placeholder">
-    <h1 data-i18n="nav.signup">Inscriptions</h1>
-    <p>Cette page sera complétée dans un second temps.</p>
-    <p class="info-back-wrap"><a class="info-back-button" href="index.html" data-i18n="info.back">← Retour à l’accueil</a></p>
+  <main class="secondary-content">
+    <section class="secondary-card">
+      <h1 class="secondary-title" data-i18n="nav.signup">Inscriptions</h1>
+      <div class="ornament" aria-hidden="true">✦</div>
+      <p class="secondary-text" style="text-align:center">Cette page sera complétée dans un second temps.</p>
+      <div class="ornament ornament-bottom" aria-hidden="true">✦</div>
+      <p class="info-back-wrap">
+        <a class="info-back-button" href="index.html" data-i18n="info.back">← Retour à l’accueil</a>
+      </p>
+    </section>
   </main>
+
+  <footer><span>FEDEZ IBIL</span></footer>
 </body>
 </html>
