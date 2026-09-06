@@ -841,7 +841,7 @@ footer{
 }
 
 .info-saints figcaption{
-  margin-top:10px;
+  margin:0 0 10px;
   color:var(--blue-deep);
   font-size:clamp(.88rem,1.2vw,1rem);
   line-height:1.45;
@@ -953,5 +953,20 @@ body.poster-open{
   .info-saints{
     grid-template-columns:1fr;
     gap:18px;
+  }
+}
+
+
+/* Navigation de la page Informations */
+.info-main-nav{
+  margin-top:104px;
+}
+.information-page .info-main{
+  padding-top:30px;
+}
+
+@media(max-width:700px){
+  .info-main-nav{
+    margin-top:92px;
   }
 }

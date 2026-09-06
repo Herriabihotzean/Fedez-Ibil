@@ -14,7 +14,7 @@
   <script defer src="langue.js"></script>
   <script defer src="informations.js"></script>
 </head>
-<body class="information-page">
+<body data-page="info" class="information-page">
 
   <!-- RETOUR À L'ACCUEIL -->
   <a class="info-home-link" href="index.html" aria-label="Retour à l'accueil">
@@ -34,6 +34,13 @@
       <span class="lang-label" data-lang-label="eu">basque</span>
     </button>
   </div>
+
+  <nav class="main-nav info-main-nav" aria-label="Navigation principale">
+    <a class="nav-link" href="index.html" data-i18n="nav.home">Accueil</a>
+    <a class="nav-link active" href="informations.html" data-i18n="nav.info">Informations</a>
+    <a class="nav-link" href="inscriptions.html" data-i18n="nav.signup">Inscriptions</a>
+    <a class="nav-link" href="liens.html" data-i18n="nav.links">Liens</a>
+  </nav>
 
   <main class="info-main">
     <section class="info-page-card">
@@ -60,12 +67,12 @@
 
       <section class="info-saints" aria-label="Saints liés à la dévotion au Sacré-Cœur">
         <figure>
-          <img src="images/sainte-marguerite-marie.jpg" alt="Sainte Marguerite-Marie Alacoque">
           <figcaption data-i18n="info.marguerite">Sainte Marguerite-Marie Alacoque (1647 - 1690)</figcaption>
+          <img src="images/sainte-marguerite-marie.jpg" alt="Sainte Marguerite-Marie Alacoque">
         </figure>
         <figure>
-          <img src="images/saint-michel-garicoits.jpg" alt="Saint Michel Garicoïts">
           <figcaption data-i18n="info.michel">Saint Michel Garicoïts (1797 - 1863)</figcaption>
+          <img src="images/saint-michel-garicoits.jpg" alt="Saint Michel Garicoïts">
         </figure>
       </section>
 
