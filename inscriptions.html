@@ -214,8 +214,8 @@
       function setLanguage(lang) {
         currentLang = lang === 'eu' ? 'eu' : 'fr';
 
-        frBlocks.forEach(el => el.style.display = currentLang === 'fr' ? '' : 'none');
-        euBlocks.forEach(el => el.style.display = currentLang === 'eu' ? '' : 'none');
+        frBlocks.forEach(el => el.style.display = currentLang === 'fr' ? 'block' : 'none');
+        euBlocks.forEach(el => el.style.display = currentLang === 'eu' ? 'block' : 'none');
         submitFr.style.display = currentLang === 'fr' ? 'inline-block' : 'none';
         submitEu.style.display = currentLang === 'eu' ? 'inline-block' : 'none';
 
