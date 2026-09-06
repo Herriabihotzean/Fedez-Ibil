@@ -25,7 +25,17 @@ const translations = {
 
       <p>Désireux de manifester notre appartenance à l’Eglise universelle à travers cette dévotion catholique, nous voulons aussi retisser les liens qui de tout temps ont uni Foi et culture traditionnelle locale. Dans cet esprit, FEDEZ IBIL fait le choix de la liturgie tridentine, à la fois familière de nos prédécesseurs et exprimant dans la plénitude de son déploiement une Foi vivante et intemporelle. Ainsi, nous recevrons les sacrements de l’Eglise sous leur forme traditionnelle.</p>
 
-      <p>À très vite !</p>`
+      <p>À très vite !</p>`,
+
+    "info.text":
+      `<p>Pour la première édition de <strong>FEDEZ IBIL</strong>, nous préparons un pèlerinage en Basse-Navarre (autour de Saint-Jean-Pied-de-Port) sur le thème de la dévotion au Sacré-Cœur de Jésus. Il se déroulera de la manière suivante&nbsp;:</p>
+
+      <ul>
+        <li>le samedi, le point de rendez-vous sera fixé peu avant midi pour la messe. Nous parcourrons 13 ou 15 km sur les sentiers de Compostelle. À l’arrivée, après une veillée, nous passerons la nuit sous tente.</li>
+        <li>le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale, en début ou milieu d’après-midi.</li>
+      </ul>
+
+      <p>Lorsque les préparatifs auront suffisamment avancé, cette page sera mise à jour.</p>`
 
   },
 
@@ -55,7 +65,17 @@ const translations = {
 
       <p>Debozio katoliko horren bidez, ezagutarazi nahi dugu Elizari leial gatzaizkola. Bertzalde, Fedea eta lekuko ohidurak elgarrekin estekatzen dituzten betiko loturak berpiztu nahi ditugu ere bai. Gogo huntan, FEDEZ IBIL elkarteak Trenteko Konzilioaren liturgia atxikitzen du, zeren gure aitzinekoeri ohidurazkoa baitzitzaioten, baita ere bere hedapen osoan, betiko Fede bizi baten adierazpena baita. Horrela, Elizako sakramenduak molde tradizionalean errezebituko ditugu.</p>
 
-      <p>Laster arte !</p>`
+      <p>Laster arte !</p>`,
+
+    "info.text":
+      `<p><strong>FEDEZ IBIL</strong>-en lehen gertakaria kari, beila bat antolatzen ari gare Baxe-Nabarren (Donibane-Garaziko inguruan), Jesusen Bihotz Sakratuarenganako debozioa gaitzat harturik. Horrela iraganen da&nbsp;:</p>
+
+      <ul>
+        <li>larunbatean, hitzordua eguerdi aitzin finkatua izanen da, mezaren entzuteko. 13 edo 15 kilometro ibiliko gare Konpostelako bideetan. Heltokirat heltzean, beilaldi baten ondotik, gauaz oihal-etxetan lo eginen dugu&nbsp;;</li>
+        <li>Igandean, gure beila segituko dugu, luzaera berdintsuko bidea eginez, eta igandeko mezarekin bururatuko dugu, arratsalde hastapenean edo erdialdean.</li>
+      </ul>
+
+      <p>Apailuak aski aitzinatuak izanen direlarik, orrialde hau eguneratua izanen da.</p>`
 
   }
 

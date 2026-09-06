@@ -1,8 +1,84 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Informations — Fedez Ibil</title><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"></head><body>
-<main class="placeholder"><h1>Informations</h1><p>Cette page sera complétée dans un second temps.</p><p><a href="index.html">← Retour à l’accueil</a></p></main>
-</body></html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informations pratiques sur le pèlerinage FEDEZ IBIL des 17 et 18 octobre 2026.">
+  <title>Informations — Fedez Ibil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="langue.js"></script>
+  <script defer src="informations.js"></script>
+</head>
+<body class="information-page">
+
+  <!-- RETOUR À L'ACCUEIL -->
+  <a class="info-home-button" href="index.html" aria-label="Retour à l'accueil">
+    <span class="info-home-title">FEDEZ IBIL</span>
+    <img src="images/bihotz-sakratua-xuria.svg" alt="" class="info-home-heart">
+  </a>
+
+  <!-- LANGUES : mêmes boutons et même emplacement que sur la page d'accueil -->
+  <div class="language-switch" aria-label="Choix de la langue">
+    <button class="lang-btn active" data-lang="fr" type="button" aria-label="français">
+      <img src="images/blason-france.svg" alt="">
+      <span class="lang-label" data-lang-label="fr">français</span>
+    </button>
+
+    <button class="lang-btn" data-lang="eu" type="button" aria-label="basque">
+      <img src="images/blason-navarre.svg" alt="">
+      <span class="lang-label" data-lang-label="eu">basque</span>
+    </button>
+  </div>
+
+  <main class="info-main">
+    <section class="info-page-card">
+
+      <!-- AFFICHE -->
+      <button class="info-poster-button" id="info-poster-open" type="button"
+              aria-label="Afficher l'affiche FEDEZ IBIL en plein écran">
+        <img class="info-poster" src="images/FEDEZ-IBIL-afitxa.svg" alt="Affiche FEDEZ IBIL">
+      </button>
+
+      <div class="ornament" aria-hidden="true">✦</div>
+
+      <!-- Le contenu est traduit directement par langue.js -->
+      <div class="info-text" data-i18n-html="info.text">
+        <p>Pour la première édition de FEDEZ IBIL, nous préparons un pèlerinage en Basse-Navarre (autour de Saint-Jean-Pied-de-Port) sur le thème de la dévotion au Sacré-Cœur de Jésus. Il se déroulera de la manière suivante&nbsp;:</p>
+        <ul>
+          <li>le samedi, le point de rendez-vous sera fixé peu avant midi pour la messe. Nous parcourrons 13 ou 15 km sur les sentiers de Compostelle. À l’arrivée, après une veillée, nous passerons la nuit sous tente.</li>
+          <li>le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale, en début ou milieu d’après-midi.</li>
+        </ul>
+        <p>Lorsque les préparatifs auront suffisamment avancé, cette page sera mise à jour.</p>
+      </div>
+
+      <div class="ornament ornament-bottom" aria-hidden="true">✦</div>
+
+      <section class="info-saints" aria-label="Saints liés à la dévotion au Sacré-Cœur">
+        <figure>
+          <img src="images/sainte-marguerite-marie.jpg" alt="Sainte Marguerite-Marie Alacoque">
+        </figure>
+        <figure>
+          <img src="images/saint-michel-garicoits.jpg" alt="Saint Michel Garicoïts">
+        </figure>
+      </section>
+
+    </section>
+  </main>
+
+  <footer><span>FEDEZ IBIL</span></footer>
+
+  <!-- AFFICHAGE PLEIN ÉCRAN DE L'AFFICHE -->
+  <div class="info-poster-overlay" id="info-poster-overlay" hidden aria-hidden="true">
+    <button class="info-poster-fullscreen" id="info-poster-close" type="button"
+            aria-label="Fermer l'affiche et revenir aux informations">
+      <img src="images/FEDEZ-IBIL-afitxa.svg" alt="Affiche FEDEZ IBIL">
+    </button>
+  </div>
+
+</body>
+</html>

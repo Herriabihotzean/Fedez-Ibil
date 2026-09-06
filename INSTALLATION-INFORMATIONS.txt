@@ -1,0 +1,19 @@
+FEDEZ IBIL — PAGE INFORMATIONS
+
+Les fichiers du dépôt ont été repris à partir de la version existante du site.
+
+Nouveaux / modifiés :
+- informations.html
+- informations.js
+- langue.js
+- style.css
+- images/bihotz-sakratua-xuria.svg (copie du cœur blanc déjà présent)
+
+À AJOUTER MANUELLEMENT DANS images/ :
+- FEDEZ-IBIL-afitxa.svg
+- sainte-marguerite-marie.jpg
+- saint-michel-garicoits.jpg
+
+Aucune modification d'index.html n'est nécessaire pour conserver la langue :
+le site utilise déjà localStorage avec la clé fedez-ibil-lang, et informations.html
+charge le même fichier langue.js. Le choix est donc conservé dans les deux sens.
