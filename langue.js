@@ -35,7 +35,16 @@ const translations = {
         <li>le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale, en début ou milieu d’après-midi.</li>
       </ul>
 
-      <p>Lorsque les préparatifs auront suffisamment avancé, cette page sera mise à jour.</p>`
+      <p>Lorsque les préparatifs auront suffisamment avancé, cette page sera mise à jour.</p>`,
+
+    "info.marguerite":
+      "Sainte Marguerite-Marie Alacoque (1647 - 1690)",
+
+    "info.michel":
+      "Saint Michel Garicoïts (1797 - 1863)",
+
+    "info.back":
+      "← Retour à l’accueil"
 
   },
 
@@ -75,7 +84,16 @@ const translations = {
         <li>Igandean, gure beila segituko dugu, luzaera berdintsuko bidea eginez, eta igandeko mezarekin bururatuko dugu, arratsalde hastapenean edo erdialdean.</li>
       </ul>
 
-      <p>Apailuak aski aitzinatuak izanen direlarik, orrialde hau eguneratua izanen da.</p>`
+      <p>Apailuak aski aitzinatuak izanen direlarik, orrialde hau eguneratua izanen da.</p>`,
+
+    "info.marguerite":
+      "Santa Marguerite-Marie Alacoque (1647 - 1690)",
+
+    "info.michel":
+      "San Mixel Garikoitz (1797 - 1863)",
+
+    "info.back":
+      "← Harrera-horrirat itzuli"
 
   }
 

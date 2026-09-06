@@ -717,7 +717,7 @@ footer{
   background:linear-gradient(#dff3ff,#f7fcff);
 }
 
-.info-home-button{
+.info-home-link{
   position:fixed;
   top:18px;
   left:30px;
@@ -728,21 +728,26 @@ footer{
   align-items:center;
   justify-content:center;
 
-  min-width:132px;
-  padding:8px 12px 9px;
-
   color:#fff;
-  background:rgba(11,77,134,.88);
-  border:1px solid rgba(255,255,255,.78);
-  border-radius:8px;
-
   text-decoration:none;
-  box-shadow:0 4px 16px rgba(7,61,105,.16);
-  backdrop-filter:blur(3px);
+  text-align:center;
+
+  /* Aucun aspect de bouton : ni fond, ni bordure, ni cadre. */
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  padding:0;
 }
 
-.info-home-button:hover{
-  background:rgba(7,59,105,.95);
+.info-home-link:hover .info-home-title,
+.info-home-link:focus-visible .info-home-title{
+  text-shadow:0 0 7px rgba(255,255,255,.45);
+}
+
+.info-home-link:focus-visible{
+  outline:1px solid rgba(255,255,255,.75);
+  outline-offset:6px;
+  border-radius:2px;
 }
 
 .info-home-title{
@@ -835,6 +840,39 @@ footer{
   box-shadow:0 8px 20px rgba(26,84,121,.14);
 }
 
+.info-saints figcaption{
+  margin-top:10px;
+  color:var(--blue-deep);
+  font-size:clamp(.88rem,1.2vw,1rem);
+  line-height:1.45;
+  text-align:center;
+  font-style:italic;
+}
+
+.info-back-wrap{
+  margin:34px 0 0;
+  text-align:center;
+}
+
+.info-back-button{
+  display:inline-block;
+  padding:9px 14px;
+  border:1px solid rgba(255,255,255,.85);
+  border-radius:7px;
+  background:var(--blue-deep);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-family:"Libre Baskerville",Georgia,serif;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(7,61,105,.15);
+}
+
+.info-back-button:hover,
+.info-back-button:focus-visible{
+  background:var(--blue-dark);
+}
+
 .info-poster-overlay[hidden]{
   display:none;
 }
@@ -874,7 +912,7 @@ body.poster-open{
 }
 
 @media(max-width:800px){
-  .info-home-button{
+  .info-home-link{
     top:12px;
     left:16px;
   }
@@ -885,11 +923,9 @@ body.poster-open{
 }
 
 @media(max-width:520px){
-  .info-home-button{
+  .info-home-link{
     top:8px;
     left:10px;
-    min-width:104px;
-    padding:6px 8px 7px;
   }
 
   .info-home-title{
