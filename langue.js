@@ -16,12 +16,27 @@ const translations = {
 
       <p>À très vite !</p>`,
 
+    /* INFORMATIONS EN FRANÇAIS */
+
     "info.text": `
-      <p>Pour la première édition de <strong>FEDEZ IBIL</strong>, nous préparons un pèlerinage en Basse-Navarre (autour de Saint-Jean-Pied-de-Port) sur le thème de la dévotion au Sacré-Cœur de Jésus. Il se déroulera de la manière suivante&nbsp;:</p>
+      <p>Pour la première édition de <strong>FEDEZ IBIL</strong>, nous vous proposons un pèlerinage en Basse-Navarre (jusqu’à Saint-Jean-Pied-de-Port) sur le thème de la dévotion au Sacré-Cœur de Jésus. Il se déroulera de la manière suivante&nbsp;:</p>
+
+      <h2 class="info-day">Samedi 17 octobre</h2>
 
       <ul>
-        <li>le samedi, le point de rendez-vous sera fixé peu avant midi pour la messe. Nous parcourrons 13 ou 15 km sur les sentiers de Compostelle. À l’arrivée, après une veillée, nous passerons la nuit sous tente.</li>
-        <li>le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale, en début ou milieu d’après-midi.</li>
+        <li>Samedi matin, le point de rendez-vous est fixé à 10 h sur le parking du Jai Alai de Saint-Jean-Pied-de-Port. Il y a des places de stationnement gratuit alentour.</li>
+
+        <li>Les sacs et tentes pour le bivouac seront chargés dans une camionnette que l’on retrouvera sur le lieu de bivouac en fin d’après-midi.</li>
+
+        <li>Des bus nous emmèneront au lieu de départ du pèlerinage, où nous aurons la messe.</li>
+
+        <li>Munis d’un carnet de chants complet, petit sac sur le dos, nous parcourrons 15 km sur les sentiers de Compostelle. À l’arrivée, après une veillée, nous passerons la nuit sous tente.</li>
+      </ul>
+
+      <h2 class="info-day">Dimanche 18 octobre</h2>
+
+      <ul>
+        <li>Le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale à Saint-Jean-Pied-de-Port en début d’après-midi. Le pèlerinage prendra fin à 17 heures.</li>
       </ul>
 
       <p>Lorsque les préparatifs auront suffisamment avancé, cette page sera mise à jour.</p>`,
@@ -29,6 +44,10 @@ const translations = {
     "info.marguerite": "Sainte Marguerite-Marie Alacoque (1647 - 1690)",
     "info.michel": "Saint Michel Garicoïts (1797 - 1863)",
     "info.back": "← Retour à l’accueil",
+
+    "info.soundOn": "activer le son",
+    "info.soundOff": "silence",
+    "info.gallery": "Photographies du pèlerinage",
 
     "links.herriaDescription":
       "Histoire, langue basque, prières et cantiques en basque et en béarnais :",
@@ -49,6 +68,7 @@ const translations = {
     "nav.links": "Loturak",
 
     "hero.quote": "« Horra gizonak hainbat maitatu dituen Bihotza… »",
+
     "hero.subtitle":
       'Eskualdunak ohidurazko beilan – 2026<sup>ko</sup> urriaren 17 eta 18<sup>an</sup>',
 
@@ -59,19 +79,36 @@ const translations = {
 
       <p>Laster arte !</p>`,
 
+    /* ARGIBIDEAK ESKUARAZ */
+
     "info.text": `
-      <p><strong>FEDEZ IBIL</strong>-en lehen gertakaria kari, beila bat antolatzen ari gare Baxe-Nabarren (Donibane-Garaziko inguruan), Jesusen Bihotz Sakratuarenganako debozioa gaitzat harturik. Horrela iraganen da&nbsp;:</p>
+      <p><strong>FEDEZ IBIL</strong>-en lehen gertakaria kari, beila bat eskaintzen dautzuegu Baxe-Nafarroan (Donibane-Garaziraino), Jesusen Bihotz Sakratuarenganako debozioa gaitzat harturik. Horrela iraganen da&nbsp;:</p>
+
+      <h2 class="info-day">Urriaren 17<sup>ena</sup>, larunbata</h2>
 
       <ul>
-        <li>larunbatean, hitzordua eguerdi aitzin finkatua izanen da, mezaren entzuteko. 13 edo 15 kilometro ibiliko gare Konpostelako bideetan. Heltokirat heltzean, beilaldi baten ondotik, gauaz oihal-etxetan lo eginen dugu&nbsp;;</li>
-        <li>Igandean, gure beila segituko dugu, luzaera berdintsuko bidea eginez, eta igandeko mezarekin bururatuko dugu, arratsalde hastapenean edo erdialdean.</li>
+        <li>Larunbat goizean, hitzordua Donibane Garaziko Jai Alaieko aparkalekuan izanen da, goizeko 10<sup>etan</sup>. Dohainiko aparkatzeko tokiak badira inguruan.</li>
+
+        <li>Zakuak eta oihaletxeak kamioneta batean sartuko ditugu, arratseko akanpalekurat ekartzeko.</li>
+
+        <li>Autobusak abiapundurat eremanen gaitu, eta han mezarekin hasiko gare.</li>
+
+        <li>Kantu liburuxka eskuan, zaku ttiki bat bizkarrean 15 kilometro ibiliko gare Konpostelako bideetan. Heltokirat heltzean, beilaldi baten ondotik, gauaz oihal-etxetan lo eginen dugu.</li>
       </ul>
 
-      <p>Apailuak aski aitzinatuak izanen direlarik, orrialde hau eguneratua izanen da.</p>`,
+      <h2 class="info-day">Urriaren 18<sup>ena</sup>, igandea</h2>
+
+      <ul>
+        <li>Igandean, gure beila segituko dugu, luzaera berdintsuko bidea eginez, eta igandeko mezarekin bururatuko dugu, arratsalde hastapenean. Beila arratsaldeko 5 orenetan bukatuko da.</li>
+      </ul>`,
 
     "info.marguerite": "Santa Marguerite-Marie Alacoque (1647 - 1690)",
     "info.michel": "San Mixel Garikoitz (1797 - 1863)",
     "info.back": "← Harrera-horrirat itzuli",
+
+    "info.soundOn": "soinua piztu",
+    "info.soundOff": "ixilik",
+    "info.gallery": "Beilako argazkiak",
 
     "links.herriaDescription":
       "Istoria, eskuara, eskuarazko othoitz eta kantikak, biarnesez ere :",
@@ -117,6 +154,18 @@ function applyLanguage(lang) {
     }
   });
 
+  /* Traduction des infobulles et libellés accessibles */
+
+  document.querySelectorAll("[data-i18n-title]").forEach(element => {
+    const key = element.dataset.i18nTitle;
+    const value = translations[selected][key];
+
+    if (value) {
+      element.title = value;
+      element.setAttribute("aria-label", value);
+    }
+  });
+
   /* Libellés des langues */
 
   const labels = selected === "eu"
@@ -137,7 +186,10 @@ function applyLanguage(lang) {
     const isActive = button.dataset.lang === selected;
 
     button.classList.toggle("active", isActive);
-    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    button.setAttribute(
+      "aria-pressed",
+      isActive ? "true" : "false"
+    );
   });
 
   /* Mémorisation de la langue */
