@@ -135,7 +135,25 @@ const translations = {
     "signup.instructions":
       "Berehala, zure izena emaiten ahal duzue.",
 
-    "signup.button": "Izena eman"
+    
+"signup.button": "Izena eman",
+
+/* HARREMANETAN JARTZEKO FORMULARIOA */
+
+"contact.title": "Gurekin harremanetan jarri",
+
+"contact.intro":
+  "FEDEZ IBIL beilari buruzko galderarik baldin baduzu, formulario honen bidez izkiriatzen ahal daukuzu.",
+
+"contact.first": "Izena *",
+"contact.last": "Deitura *",
+"contact.email": "Helbide elektronikoa *",
+"contact.subject": "Gaia *",
+"contact.message": "Zure mezua *",
+"contact.send": "Mezua igorri",
+
+"contact.link": "Gurekin harremanetan jarri"
+
   }
 };
 
