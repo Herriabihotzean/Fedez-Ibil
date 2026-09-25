@@ -293,10 +293,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const savedLanguage =
-    localStorage.getItem("fedez-ibil-lang") || "fr";
+const params = new URLSearchParams(window.location.search);
+const requestedLanguage = params.get("lang");
 
-  applyLanguage(savedLanguage);
+const savedLanguage =
+  requestedLanguage === "fr" || requestedLanguage === "eu"
+    ? requestedLanguage
+    : localStorage.getItem("fedez-ibil-lang") || "fr";
+
+applyLanguage(savedLanguage);
 
   sizeSacredHeart();
 });
