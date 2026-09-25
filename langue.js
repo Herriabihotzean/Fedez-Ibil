@@ -291,13 +291,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-const params = new URLSearchParams(window.location.search);
-const requestedLanguage = params.get("lang");
-
 const savedLanguage =
-  requestedLanguage === "fr" || requestedLanguage === "eu"
-    ? requestedLanguage
-    : localStorage.getItem("fedez-ibil-lang") || "fr";
+  localStorage.getItem("fedez-ibil-lang") || "fr";
 
 applyLanguage(savedLanguage);
 
