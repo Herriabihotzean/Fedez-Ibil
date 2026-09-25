@@ -11,6 +11,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    .info-text .info-day { text-align:center; margin:1.7em 0 .75em; font-family:inherit; font-size:1.22em; font-weight:700; }
+    .info-day sup { font-size:.65em; vertical-align:super; line-height:0; }
+    .info-gallery { position:relative; width:100vw; max-width:100vw; margin:1.2rem 0 2rem; margin-left:calc(50% - 50vw); background:#151515; overflow:hidden; }
+    .info-gallery-frame { display:block; width:100%; aspect-ratio:16/9; cursor:zoom-in; overflow:hidden; }
+    .info-gallery-frame img { display:block; width:100%; height:100%; object-fit:contain; }
+    .info-gallery-sound { position:absolute; z-index:5; right:18px; top:15px; display:grid; place-items:center; width:38px; height:38px; padding:5px; border:0; background:none; color:#fff; opacity:.62; cursor:pointer; filter:drop-shadow(0 1px 3px #000); }
+    .info-gallery-sound:hover,.info-gallery-sound:focus-visible { opacity:1; }
+    .info-gallery-sound svg { width:29px; height:29px; }
+    .info-gallery-sound svg[hidden] { display:none; }
+    .info-gallery-dots { position:absolute; bottom:14px; left:50%; transform:translateX(-50%); z-index:5; display:flex; align-items:center; gap:10px; }
+    .info-gallery-dots button { width:9px; height:9px; border-radius:50%; border:1px solid rgba(255,255,255,.8); padding:0; background:rgba(255,255,255,.35); cursor:pointer; box-shadow:0 1px 3px #333; }
+    .info-gallery-dots button.active { background:#fff; transform:scale(1.2); }
+    .info-gallery:fullscreen { display:flex; align-items:center; justify-content:center; background:#000; width:100vw; height:100vh; margin:0; }
+    .info-gallery:fullscreen .info-gallery-frame { width:100%; height:100%; aspect-ratio:auto; cursor:zoom-out; }
+    .info-gallery:fullscreen .info-gallery-frame img { width:100%; height:100%; object-fit:contain; }
+    .info-gallery:fullscreen .info-gallery-sound { top:24px; right:26px; }
+    .info-gallery:fullscreen .info-gallery-dots { bottom:25px; }
+  </style>
+
   <script defer src="langue.js"></script>
   <script defer src="informations.js"></script>
 </head>
@@ -55,13 +75,32 @@
 
       <!-- Le contenu est traduit directement par langue.js -->
       <div class="info-text" data-i18n-html="info.text">
-        <p>Pour la première édition de FEDEZ IBIL, nous préparons un pèlerinage en Basse-Navarre (autour de Saint-Jean-Pied-de-Port) sur le thème de la dévotion au Sacré-Cœur de Jésus. Il se déroulera de la manière suivante&nbsp;:</p>
-        <ul>
-          <li>le samedi, le point de rendez-vous sera fixé peu avant midi pour la messe. Nous parcourrons 13 ou 15 km sur les sentiers de Compostelle. À l’arrivée, après une veillée, nous passerons la nuit sous tente.</li>
-          <li>le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale, en début ou milieu d’après-midi.</li>
-        </ul>
-        <p>Lorsque les préparatifs auront suffisamment avancé, cette page sera mise à jour.</p>
+      <p>Pour la première édition de <strong>FEDEZ IBIL</strong>, nous vous proposons un pèlerinage en Basse-Navarre (jusqu’à Saint-Jean-Pied-de-Port) sur le thème de la dévotion au Sacré-Cœur de Jésus. Il se déroulera de la manière suivante&nbsp;:</p>
+      <h2 class="info-day">Samedi 17 octobre</h2>
+      <ul>
+        <li>Samedi matin, le point de rendez-vous est fixé à 10 h sur le parking du Jai Alai de Saint-Jean-Pied-de-Port. Il y a des places de stationnement gratuit alentour.</li>
+        <li>Les sacs et tentes pour le bivouac seront chargés dans une camionnette que l’on retrouvera sur le lieu de bivouac en fin d’après-midi.</li>
+        <li>Des bus nous emmèneront au lieu de départ du pèlerinage, où nous aurons la messe.</li>
+        <li>Munis d’un carnet de chants complet, petit sac sur le dos, nous parcourrons 15 km sur les sentiers de Compostelle. À l’arrivée, après une veillée, nous passerons la nuit sous tente.</li>
+      </ul>
+      <h2 class="info-day">Dimanche 18 octobre</h2>
+      <ul><li>Le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale à Saint-Jean-Pied-de-Port en début d’après-midi. Le pèlerinage prendra fin à 17 heures.</li></ul>
+      <p>Lorsque les préparatifs auront suffisamment avancé, cette page sera mise à jour.</p>
       </div>
+
+
+      <div class="ornament" aria-hidden="true">✦</div>
+      <section class="info-gallery" id="info-gallery" aria-label="Photographies du pèlerinage" data-i18n-title="info.gallery">
+        <div class="info-gallery-frame" id="info-gallery-frame" tabindex="0" role="button" aria-label="Afficher les photographies en plein écran">
+          <img id="info-gallery-photo" src="images/01.jpg" alt="Photographie 1 sur 7" loading="eager">
+        </div>
+        <button class="info-gallery-sound" id="info-gallery-sound" type="button" data-i18n-title="info.soundOn" title="activer le son" aria-label="activer le son">
+          <svg class="sound-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+          <svg class="mute-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
+        </button>
+        <div class="info-gallery-dots" id="info-gallery-dots" aria-label="Choisir une photographie"></div>
+        <audio id="info-gallery-audio" preload="none" src="audio/01.mp3"></audio>
+      </section>
 
       <div class="ornament ornament-bottom" aria-hidden="true">✦</div>
 
