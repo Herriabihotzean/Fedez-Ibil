@@ -14,4 +14,4 @@
   /exec
 */
 
-window.FEDEZ_CONTACT_ENDPOINT = "";
+window.FEDEZ_CONTACT_ENDPOINT = "https://script.google.com/macros/s/AKfycbxoHIZVSQH6Y9SVIE1qyDypxZnI4RwQC_AmW_T7bDGctnGuZCWwdVDv3lMaBn2WexCaOw/exec";
