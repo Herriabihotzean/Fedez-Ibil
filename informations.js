@@ -1,25 +1,35 @@
 
 /* =========================================================
-   AFFICHE FEDEZ IBIL : PLEIN ÉCRAN
+   FEDEZ IBIL — PAGE INFORMATIONS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* =========================================================
+     1. AFFICHE FEDEZ IBIL : PLEIN ÉCRAN
+     ========================================================= */
+
   const posterOpen = document.getElementById("info-poster-open");
   const posterOverlay = document.getElementById("info-poster-overlay");
   const posterClose = document.getElementById("info-poster-close");
 
   if (posterOpen && posterOverlay && posterClose) {
+
     function openPoster() {
       posterOverlay.hidden = false;
       posterOverlay.setAttribute("aria-hidden", "false");
+
       document.body.classList.add("poster-open");
+
       posterClose.focus({ preventScroll: true });
     }
 
     function closePoster() {
       posterOverlay.hidden = true;
       posterOverlay.setAttribute("aria-hidden", "true");
+
       document.body.classList.remove("poster-open");
+
       posterOpen.focus({ preventScroll: true });
     }
 
@@ -33,8 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   /* =========================================================
-     DIAPORAMA : SEPT PHOTOGRAPHIES
+     2. DIAPORAMA : SEPT PHOTOGRAPHIES
      ========================================================= */
 
   const gallery = document.getElementById("info-gallery");
@@ -45,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("info-gallery-audio");
 
   if (!gallery || !frame || !photo || !dots || !sound || !audio) {
+    console.warn("Un ou plusieurs éléments du diaporama sont introuvables.");
     return;
   }
 
@@ -54,10 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   let current = 0;
-  let timer;
+  let timer = null;
 
-  const getLang = () =>
-    document.documentElement.lang === "eu" ? "eu" : "fr";
+  function getLang() {
+    return document.documentElement.lang === "eu" ? "eu" : "fr";
+  }
 
   function show(index) {
     current = (index + photos.length) % photos.length;
@@ -66,17 +79,25 @@ document.addEventListener("DOMContentLoaded", () => {
     photo.alt = `Photographie ${current + 1} sur ${photos.length}`;
 
     [...dots.children].forEach((dot, i) => {
-      dot.classList.toggle("active", i === current);
-      dot.setAttribute("aria-pressed", String(i === current));
+      const active = i === current;
+
+      dot.classList.toggle("active", active);
+      dot.setAttribute("aria-pressed", String(active));
     });
   }
 
   function restartTimer() {
     clearInterval(timer);
-    timer = setInterval(() => show(current + 1), 4000);
+
+    timer = setInterval(() => {
+      show(current + 1);
+    }, 4000);
   }
 
-  /* Points de navigation sous les photographies */
+
+  /* =========================================================
+     3. POINTS DE NAVIGATION DU DIAPORAMA
+     ========================================================= */
 
   photos.forEach((_, i) => {
     const dot = document.createElement("button");
@@ -86,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dot.addEventListener("click", event => {
       event.stopPropagation();
+
       show(i);
       restartTimer();
     });
@@ -96,8 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
   show(0);
   restartTimer();
 
+
   /* =========================================================
-     PLEIN ÉCRAN DU DIAPORAMA
+     4. PLEIN ÉCRAN DU DIAPORAMA
      ========================================================= */
 
   async function toggleFullscreen() {
@@ -108,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         await gallery.requestFullscreen();
       }
     } catch (error) {
-      console.warn("Plein écran indisponible", error);
+      console.warn("Plein écran indisponible :", error);
     }
   }
 
@@ -121,15 +144,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
   /* =========================================================
-     LECTURE AUDIO ET BOUTON HAUT-PARLEUR
+     5. LECTURE AUDIO ET BOUTON HAUT-PARLEUR
      ========================================================= */
 
-  function updateSound() {
-    const playing = !audio.paused;
+  const soundIcon = sound.querySelector(".sound-icon");
+  const muteIcon = sound.querySelector(".mute-icon");
 
-    sound.querySelector(".sound-icon").hidden = playing;
-    sound.querySelector(".mute-icon").hidden = !playing;
+  // Le fichier audio est situé dans le dossier audio,
+  // à la racine du dépôt GitHub.
+  audio.src = "audio/01.mp3";
+
+  function updateSound() {
+    const playing = !audio.paused && !audio.ended;
+
+    // Haut-parleur normal lorsque la musique est arrêtée.
+    // Haut-parleur barré lorsque la musique est en lecture.
+    if (soundIcon) {
+      soundIcon.style.display = playing ? "none" : "block";
+      soundIcon.hidden = playing;
+    }
+
+    if (muteIcon) {
+      muteIcon.style.display = playing ? "block" : "none";
+      muteIcon.hidden = !playing;
+    }
 
     const lang = getLang();
 
@@ -139,39 +179,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sound.title = label;
     sound.setAttribute("aria-label", label);
+    sound.setAttribute("aria-pressed", String(playing));
 
     sound.dataset.i18nTitle = playing
       ? "info.soundOff"
       : "info.soundOn";
   }
 
+
+  /* =========================================================
+     6. ACTIVATION ET DÉSACTIVATION DU SON
+     ========================================================= */
+
   sound.addEventListener("click", async event => {
     event.stopPropagation();
 
+    // Si la musique joue, on la met en pause.
     if (!audio.paused) {
       audio.pause();
-    } else {
-      try {
-        await audio.play();
-      } catch (error) {
-        console.warn("Lecture audio impossible", error);
-      }
+      updateSound();
+      return;
     }
+
+    // Si la piste était terminée, on repart du début.
+    if (audio.ended) {
+      audio.currentTime = 0;
+    }
+
+    // Sinon, on reprend à l'endroit où elle était arrêtée.
+    try {
+      await audio.play();
+      updateSound();
+    } catch (error) {
+      console.error("Lecture audio impossible :", error);
+
+      const lang = getLang();
+
+      alert(
+        lang === "eu"
+          ? "Soinua ezin da irakurri. Egiazta ezazu audio/01.mp3 fitxategia."
+          : "Impossible de lire la piste audio. Vérifiez le fichier audio/01.mp3."
+      );
+
+      updateSound();
+    }
+  });
+
+
+  /* =========================================================
+     7. SYNCHRONISATION DES ICÔNES
+     ========================================================= */
+
+  // Le navigateur peut modifier l'état du lecteur audio.
+  // Ces événements garantissent que l'icône reste correcte.
+
+  audio.addEventListener("play", updateSound);
+  audio.addEventListener("playing", updateSound);
+  audio.addEventListener("pause", updateSound);
+  audio.addEventListener("ended", updateSound);
+
+  audio.addEventListener("error", () => {
+    console.error(
+      "Erreur de chargement du fichier audio/01.mp3",
+      audio.error
+    );
 
     updateSound();
   });
 
-  audio.addEventListener("play", updateSound);
-  audio.addEventListener("pause", updateSound);
-  audio.addEventListener("ended", updateSound);
 
-  /* Actualisation des infobulles au changement de langue */
+  /* =========================================================
+     8. ACTUALISATION AU CHANGEMENT DE LANGUE
+     ========================================================= */
 
   document.querySelectorAll(".lang-btn").forEach(button => {
     button.addEventListener("click", () => {
+      // On laisse langue.js effectuer le changement,
+      // puis on actualise l'infobulle du haut-parleur.
       queueMicrotask(updateSound);
     });
   });
 
+
+  /* =========================================================
+     9. INITIALISATION
+     ========================================================= */
+
   updateSound();
+
 });
