@@ -1110,3 +1110,42 @@ body.poster-open{
     height:58px;
   }
 }
+
+
+
+/* ==========================================
+   LIEN DE CONTACT — BAS DE PAGE
+   ========================================== */
+
+.contact-footer-link {
+  margin: 38px auto 24px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.contact-footer-link a {
+  display: inline-block;
+  padding: 8px 14px;
+
+  color: #174f80;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(23, 79, 128, 0.45);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-footer-link a:hover {
+  color: #103b61;
+  border-bottom-color: #103b61;
+}
+
+.contact-footer-link a:focus-visible {
+  outline: 2px solid #174f80;
+  outline-offset: 5px;
+}
