@@ -1,0 +1,204 @@
+
+/* ==========================================
+   FEDEZ IBIL — PAGE DE CONTACT
+   ========================================== */
+
+.contact-page {
+  --contact-blue: #174f80;
+  --contact-blue-dark: #103b61;
+  --contact-blue-light: #e9f1f8;
+  --contact-border: #b8cddd;
+
+  background-color: #f8fafc;
+}
+
+/* Contenu principal */
+
+.contact-main {
+  width: min(100% - 32px, 850px);
+  margin: 45px auto 65px;
+}
+
+/* Carte contenant le formulaire */
+
+.contact-card {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 42px 52px 48px;
+  background: #ffffff;
+  border: 1px solid var(--contact-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(16, 59, 97, 0.09);
+}
+
+.contact-card h1 {
+  margin: 0;
+  color: var(--contact-blue);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Petit ornement sous le titre */
+
+.contact-card .ornament {
+  margin: 12px auto 20px;
+  color: var(--contact-blue);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Introduction */
+
+.contact-intro {
+  max-width: 580px;
+  margin: 0 auto 34px;
+  color: #35485a;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Champs du formulaire */
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.contact-field label {
+  color: var(--contact-blue-dark);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.contact-field input,
+.contact-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 15px;
+
+  color: #243747;
+  background: #ffffff;
+  border: 1px solid var(--contact-border);
+  border-radius: 6px;
+
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-field textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--contact-blue);
+  box-shadow: 0 0 0 3px rgba(23, 79, 128, 0.15);
+}
+
+/* Bouton d'envoi */
+
+.contact-submit {
+  display: block;
+  width: fit-content;
+  min-width: 230px;
+  max-width: 100%;
+  margin: 34px auto 0;
+  padding: 15px 26px;
+
+  color: #ffffff;
+  background: var(--contact-blue);
+  border: 1px solid var(--contact-blue);
+  border-radius: 7px;
+
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-submit:hover {
+  background: var(--contact-blue-dark);
+  transform: translateY(-1px);
+}
+
+.contact-submit:focus-visible {
+  outline: 3px solid #83b7df;
+  outline-offset: 3px;
+}
+
+.contact-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+/* Messages de confirmation ou d'erreur */
+
+.contact-status {
+  min-height: 1.5em;
+  margin: 18px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact-status.success {
+  color: #23643c;
+}
+
+.contact-status.error {
+  color: #a32626;
+}
+
+/* Retour à l'accueil */
+
+.contact-page .info-back-wrap {
+  margin: 38px auto 0;
+  text-align: center;
+}
+
+/* Adaptation aux petits écrans */
+
+@media (max-width: 600px) {
+  .contact-main {
+    width: min(100% - 24px, 850px);
+    margin-top: 26px;
+    margin-bottom: 45px;
+  }
+
+  .contact-card {
+    padding: 30px 20px 34px;
+  }
+
+  .contact-intro {
+    font-size: 0.9rem;
+  }
+
+  .contact-field {
+    margin-bottom: 19px;
+  }
+
+  .contact-submit {
+    width: 100%;
+  }
+}
