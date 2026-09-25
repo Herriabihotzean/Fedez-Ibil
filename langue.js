@@ -56,7 +56,25 @@ const translations = {
     "signup.instructions":
       "Vous pouvez vous inscrire en suivant le lien Hello Asso ci-dessous.",
 
-    "signup.button": "S’inscrire"
+    
+"signup.button": "S’inscrire",
+
+/* FORMULAIRE DE CONTACT */
+
+"contact.title": "Nous contacter",
+
+"contact.intro":
+  "Pour toute question concernant le pèlerinage FEDEZ IBIL, vous pouvez nous écrire au moyen de ce formulaire.",
+
+"contact.first": "Prénom *",
+"contact.last": "Nom *",
+"contact.email": "Adresse électronique *",
+"contact.subject": "Objet *",
+"contact.message": "Votre message *",
+"contact.send": "Envoyer le message",
+
+"contact.link": "Nous contacter"
+
   },
 
   eu: {
