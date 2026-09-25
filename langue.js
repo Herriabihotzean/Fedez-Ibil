@@ -37,7 +37,7 @@ const translations = {
 
       <ul>
         <li>Le dimanche, nous reprendrons notre pèlerinage, parcourrons environ la même distance et terminerons avec la messe dominicale à Saint-Jean-Pied-de-Port en début d’après-midi. Le pèlerinage prendra fin à 17 heures.</li>
-      </ul>,
+      </ul>`,
 
     "info.marguerite": "Sainte Marguerite-Marie Alacoque (1647 - 1690)",
     "info.michel": "Saint Michel Garicoïts (1797 - 1863)",
