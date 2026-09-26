@@ -152,9 +152,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const soundIcon = sound.querySelector(".sound-icon");
   const muteIcon = sound.querySelector(".mute-icon");
 
-  // Le fichier audio est situé dans le dossier audio,
-  // à la racine du dépôt GitHub.
-  audio.src = "audio/01.mp3";
+
+  const morceaux = [
+    "audio/01.mp3",
+    "audio/02.mp3",
+    "audio/03.mp3",
+    "audio/04.mp3"
+  ];
+
+  let morceauActuel = 0;
+  let lectureDemandee = false;
+
+  audio.src = morceaux[morceauActuel];
+
+  async function lirePisteDisponible() {
+    while (lectureDemandee && morceauActuel < morceaux.length) {
+      const piste = morceaux[morceauActuel];
+
+      try {
+        // Vérifie si le fichier existe sur GitHub.
+        const reponse = await fetch(piste, { method: "HEAD" });
+
+        if (!reponse.ok) {
+          throw new Error("Fichier absent");
+        }
+
+        if (!lectureDemandee) return;
+
+        audio.src = piste;
+        await audio.play();
+        return;
+
+      } catch (error) {
+        if (!lectureDemandee) return;
+
+        console.warn("Piste indisponible :", piste, error);
+        morceauActuel++;
+      }
+    }
+
+    lectureDemandee = false;
+    updateSound();
+  }
+
 
   function updateSound() {
     const playing = !audio.paused && !audio.ended;
@@ -191,38 +231,48 @@ document.addEventListener("DOMContentLoaded", () => {
      6. ACTIVATION ET DÉSACTIVATION DU SON
      ========================================================= */
 
+
   sound.addEventListener("click", async event => {
     event.stopPropagation();
 
-    // Si la musique joue, on la met en pause.
-    if (!audio.paused) {
+    // Arrêter temporairement la lecture.
+    if (lectureDemandee) {
+      lectureDemandee = false;
       audio.pause();
       updateSound();
       return;
     }
 
-    // Si la piste était terminée, on repart du début.
-    if (audio.ended) {
-      audio.currentTime = 0;
+    // Recommencer si toutes les pistes sont terminées.
+    if (morceauActuel >= morceaux.length) {
+      morceauActuel = 0;
     }
 
-    // Sinon, on reprend à l'endroit où elle était arrêtée.
-    try {
-      await audio.play();
+    // Reprendre une piste déjà chargée et mise en pause.
+    if (
+      audio.paused &&
+      !audio.ended &&
+      audio.currentTime > 0 &&
+      audio.currentSrc.endsWith(morceaux[morceauActuel])
+    ) {
+      lectureDemandee = true;
+
+      try {
+        await audio.play();
+      } catch (error) {
+        console.warn("Reprise impossible :", error);
+        morceauActuel++;
+        await lirePisteDisponible();
+      }
+
       updateSound();
-    } catch (error) {
-      console.error("Lecture audio impossible :", error);
-
-      const lang = getLang();
-
-      alert(
-        lang === "eu"
-          ? "Soinua ezin da irakurri. Egiazta ezazu audio/01.mp3 fitxategia."
-          : "Impossible de lire la piste audio. Vérifiez le fichier audio/01.mp3."
-      );
-
-      updateSound();
+      return;
     }
+
+    // Chercher la prochaine piste disponible.
+    lectureDemandee = true;
+    await lirePisteDisponible();
+    updateSound();
   });
 
 
@@ -233,20 +283,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // Le navigateur peut modifier l'état du lecteur audio.
   // Ces événements garantissent que l'icône reste correcte.
 
+
   audio.addEventListener("play", updateSound);
   audio.addEventListener("playing", updateSound);
   audio.addEventListener("pause", updateSound);
-  audio.addEventListener("ended", updateSound);
+
+  audio.addEventListener("ended", async () => {
+    if (!lectureDemandee) {
+      updateSound();
+      return;
+    }
+
+    morceauActuel++;
+    await lirePisteDisponible();
+  });
 
   audio.addEventListener("error", () => {
-    console.error(
-      "Erreur de chargement du fichier audio/01.mp3",
-      audio.error
+    console.warn(
+      "Erreur de lecture :",
+      morceaux[morceauActuel]
     );
+
+    // Si une piste devient illisible,
+    // passer à la suivante.
+    if (lectureDemandee) {
+      morceauActuel++;
+      lirePisteDisponible();
+    }
 
     updateSound();
   });
-
 
   /* =========================================================
      8. ACTUALISATION AU CHANGEMENT DE LANGUE
