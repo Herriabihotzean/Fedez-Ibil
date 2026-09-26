@@ -133,7 +133,7 @@ const translations = {
       "FEDEZ IBIL beilarako izen-emaiteak idekiak dira !",
 
     "signup.instructions":
-      "Berehala, zure izena emaiten ahal duzue.",
+      "Berehala, zure izena emaiten ahal duzue, Hello Asso lotura jarraikiz.",
 
     
 "signup.button": "Izena eman",
