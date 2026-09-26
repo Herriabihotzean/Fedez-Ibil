@@ -157,7 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "audio/01.mp3",
     "audio/02.mp3",
     "audio/03.mp3",
-    "audio/04.mp3"
+    "audio/04.mp3",
+    "audio/05.mp3",
+    "audio/06.mp3",
+    "audio/07.mp3"
   ];
 
   let morceauActuel = 0;
