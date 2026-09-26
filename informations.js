@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     timer = setInterval(() => {
       show(current + 1);
-    }, 4000);
+    }, 10000);
   }
 
 
